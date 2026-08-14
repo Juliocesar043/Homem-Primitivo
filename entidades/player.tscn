@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://gdtj37juuvoo"]
 
 [ext_resource type="Script" uid="uid://d00lvue82f57u" path="res://scripts/player.gd" id="1_11m8g"]
-[ext_resource type="Texture2D" uid="uid://vlm4y0qmljvl" path="res://sprites/idle.png" id="2_kp4u0"]
-[ext_resource type="Texture2D" uid="uid://bd6jjgrnqgkjw" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://c07no8vaonacd" path="res://sprites/idle.png" id="2_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://cql6uolb6rvtf" path="res://sprites/pular.png" id="3_0p7bn"]
+[ext_resource type="Texture2D" uid="uid://7m6l7vuky3p6" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdgg5"]
 radius = 4.3823814
 height = 130.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrqjl"]
+atlas = ExtResource("3_0p7bn")
+region = Rect2(384, 0, 128, 132)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0p7bn"]
 atlas = ExtResource("2_kp4u0")
@@ -56,6 +61,22 @@ region = Rect2(1280, 0, 128, 132)
 atlas = ExtResource("2_kp4u0")
 region = Rect2(1408, 0, 128, 132)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcewq"]
+atlas = ExtResource("3_0p7bn")
+region = Rect2(128, 0, 128, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg13l"]
+atlas = ExtResource("3_0p7bn")
+region = Rect2(256, 0, 128, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu2lu"]
+atlas = ExtResource("3_0p7bn")
+region = Rect2(512, 0, 128, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olv0n"]
+atlas = ExtResource("3_0p7bn")
+region = Rect2(0, 0, 128, 132)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bqy4"]
 atlas = ExtResource("3_kp4u0")
 region = Rect2(0, 0, 128, 132)
@@ -99,6 +120,14 @@ region = Rect2(1152, 0, 128, 132)
 [sub_resource type="SpriteFrames" id="SpriteFrames_hdgg5"]
 animations = [{
 "frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_yrqjl")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 1.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0p7bn")
 }, {
@@ -135,8 +164,30 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kq7hh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_kcewq")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_tg13l")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu2lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olv0n")
+}],
+"loop": 0,
+"name": &"land",
 "speed": 5.0
 }, {
 "frames": [{
@@ -170,7 +221,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3k7ag")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -186,7 +237,7 @@ shape = SubResource("CapsuleShape2D_hdgg5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1527523247]
 sprite_frames = SubResource("SpriteFrames_hdgg5")
-animation = &"walk"
+animation = &"land"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1935901381]
