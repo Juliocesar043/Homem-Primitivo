@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d00lvue82f57u" path="res://scripts/player.gd" id="1_11m8g"]
 [ext_resource type="Texture2D" uid="uid://c07no8vaonacd" path="res://sprites/idle.png" id="2_kp4u0"]
-[ext_resource type="Texture2D" uid="uid://cql6uolb6rvtf" path="res://sprites/pular.png" id="3_0p7bn"]
-[ext_resource type="Texture2D" uid="uid://7m6l7vuky3p6" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://kp4ytyrpa0qr" path="res://sprites/pular.png" id="3_0p7bn"]
+[ext_resource type="Texture2D" uid="uid://bp4cp3sno4b0c" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
+[ext_resource type="AudioStream" uid="uid://bu0eplrbx2ie3" path="res://sounds/jump.wav" id="5_opfg8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdgg5"]
 radius = 4.3823814
@@ -201,3 +202,6 @@ autoplay = "idle"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1935901381]
 limit_left = 0
 limit_bottom = 200
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2019404771]
+stream = ExtResource("5_opfg8")

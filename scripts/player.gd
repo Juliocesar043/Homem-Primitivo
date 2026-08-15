@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var somPulo: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var was_in_air: bool = false
 var is_landing: bool = false
@@ -11,10 +12,13 @@ func _physics_process(delta: float) -> void:
 	# Aplica a gravidade
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 
 	# Lida com o pulo
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		somPulo.play()
+		
 
 	# Pega a direção e lida com o movimento
 	var direction := Input.get_axis("ui_left", "ui_right")
