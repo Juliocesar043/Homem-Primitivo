@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://gdtj37juuvoo" path="res://entidades/player.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://bp2yi68sc7hjt" path="res://sprites/tileset-chao.png" id="2_dbls1"]
-[ext_resource type="Texture2D" uid="uid://bowre5g670wtv" path="res://sprites/arvores.png" id="3_33cqm"]
+[ext_resource type="Texture2D" uid="uid://d02c1f317brpn" path="res://sprites/arvores.png" id="3_33cqm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 texture = ExtResource("2_dbls1")

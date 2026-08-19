@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var ray_cast = $RayCast2D 
 
 var was_in_air: bool = false
 var is_landing: bool = false
@@ -39,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	if is_on_floor() and velocity.x != 0:
+	if velocity.x != 0:
 		estaMovendo = true
 
 
@@ -75,15 +74,16 @@ func _physics_process(delta: float) -> void:
 					is_landing = false
 					anim.play("idle") 
 		else:
-			if direction > 0:
-				anim.flip_h = true # Dica: Geralmente direita (>) é false 
-				anim.play("walk")
-			elif direction < 0:
-				anim.flip_h = false  # Dica: Geralmente esquerda (<) é true
-				anim.play("walk")
-			elif is_interacting == true:
+			if is_interacting == true:
 				anim.play("interagir")
 				await anim.animation_finished
 				is_interacting = false
+			elif direction > 0:
+				anim.flip_h = true 
+				anim.play("walk")
+			elif direction < 0:
+				anim.flip_h = false  
+				anim.play("walk")
+
 			elif not Input.is_anything_pressed() and not is_interacting:
 				anim.play("idle")

@@ -13,7 +13,7 @@ func tocar_som(nome_do_som: String, variar_pitch: bool = false):
 		print("Erro: O som '", nome_do_som, "' não foi encontrado no AudioManager.")
 		return
 		
-	# Cria um novo AudioStreamPlayer via código
+	# Cria um novo AudioStreamPlayer via código1
 	var player = AudioStreamPlayer.new()
 	player.stream = sons[nome_do_som]
 	
