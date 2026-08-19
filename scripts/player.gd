@@ -1,89 +1,111 @@
 extends CharacterBody2D
 
-@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+const velocidade: float = 300.0
+const velocidadePulo: float = -600.0
 
-var was_in_air: bool = false
-var is_landing: bool = false
-var is_interacting: bool = false
-var estaMovendo: bool = false
-var tempo_passo: float = 0.0
-var intervalo_passo: float = 0.35 
+@onready var spriteAnimado: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
+var estavaNoAr: bool = false
+var estaPousando: bool = false
+var estaInteragindo: bool = false
 
+
+func _ready() -> void:
+	spriteAnimado.animation_finished.connect(aoTerminarAnimacao)
 
 
 func _physics_process(delta: float) -> void:
-	# Aplica a gravidade sempre
+	aplicarGravidade(delta)
+
+	var direcao := Input.get_axis("ui_left", "ui_right")
+	lidarComPulo()
+	lidarComInteracao()
+	aplicarMovimentoHorizontal(direcao)
+
+	move_and_slide()
+	atualizarEstadoAr()
+	atualizarAnimacao(direcao)
+
+
+func aplicarGravidade(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("interagir") and is_on_floor() and not is_interacting:
-		is_interacting = true
-		AudioManager.tocar_som("interagir")
-		
-		
-	# Lida com o pulo
+
+func lidarComPulo() -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = velocidadePulo
 		AudioManager.tocar_som("pulo", true)
-		
-	# Pega a direção e lida com o movimento
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+
+
+func lidarComInteracao() -> void:
+	if (
+		Input.is_action_just_pressed("interagir")
+		and is_on_floor()
+		and not estaInteragindo
+	):
+		estaInteragindo = true
+		AudioManager.tocar_som("interagir")
+
+
+func aplicarMovimentoHorizontal(direcao: float) -> void:
+	if direcao != 0.0:
+		velocity.x = direcao * velocidade
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
-	move_and_slide()
-	
-	if velocity.x != 0:
-		estaMovendo = true
+		velocity.x = move_toward(velocity.x, 0.0, velocidade)
 
 
-	# Detecta o exato momento em que ele encosta no chão
-	if is_on_floor() and was_in_air:
-		is_landing = true
-		anim.play("land")
+func atualizarEstadoAr() -> void:
+	var estaNoChao := is_on_floor()
 
-	# Atualiza a variável para o próximo frame
-	was_in_air = not is_on_floor()
+	if estaNoChao and estavaNoAr:
+		estaPousando = true
 
-	
-	# Lógica de transição de animações padrão
+	estavaNoAr = not estaNoChao
+
+
+func atualizarAnimacao(direcao: float) -> void:
 	if not is_on_floor():
-		if velocity.y < 0:
-			anim.play("jump") 
-			if direction > 0:
-				anim.flip_h = true
-			elif direction < 0:
-				anim.flip_h = false
-		else:
-			anim.play("fall") 
-			if direction > 0:
-				anim.flip_h = true
-			elif direction < 0:
-				anim.flip_h = false
-	else:
-		if is_landing:
-			if velocity.x != 0:
-				is_landing = false
-				anim.play("walk")
-			elif Input.is_anything_pressed():
-					is_landing = false
-					anim.play("idle") 
-		else:
-			if is_interacting == true:
-				anim.play("interagir")
-				await anim.animation_finished
-				is_interacting = false
-			elif direction > 0:
-				anim.flip_h = true 
-				anim.play("walk")
-			elif direction < 0:
-				anim.flip_h = false  
-				anim.play("walk")
+		atualizarAnimacaoNoAr(direcao)
+		return
 
-			elif not Input.is_anything_pressed() and not is_interacting:
-				anim.play("idle")
+	if estaPousando:
+		reproduzirAnimacao("land")
+		return
+
+	if estaInteragindo:
+		reproduzirAnimacao("interagir")
+		return
+
+	if direcao != 0.0:
+		atualizarDirecao(direcao)
+		reproduzirAnimacao("walk")
+	else:
+		reproduzirAnimacao("idle")
+
+
+func atualizarAnimacaoNoAr(direcao: float) -> void:
+	if velocity.y < 0.0:
+		reproduzirAnimacao("jump")
+	else:
+		reproduzirAnimacao("fall")
+
+	if direcao != 0.0:
+		atualizarDirecao(direcao)
+
+
+func atualizarDirecao(direcao: float) -> void:
+	spriteAnimado.flip_h = direcao > 0.0
+
+
+func reproduzirAnimacao(nomeAnimacao: StringName) -> void:
+	if spriteAnimado.animation != nomeAnimacao:
+		spriteAnimado.play(nomeAnimacao)
+
+
+func aoTerminarAnimacao() -> void:
+	match spriteAnimado.animation:
+		&"interagir":
+			estaInteragindo = false
+		&"land":
+			estaPousando = false
