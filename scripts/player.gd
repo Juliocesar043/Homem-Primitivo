@@ -43,6 +43,7 @@ func lidarComInteracao() -> void:
 		Input.is_action_just_pressed("interagir")
 		and is_on_floor()
 		and not estaInteragindo
+		and not estaPousando
 	):
 		estaInteragindo = true
 		AudioManager.tocar_som("interagir")
