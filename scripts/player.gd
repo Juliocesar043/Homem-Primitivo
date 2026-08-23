@@ -1,89 +1,93 @@
 extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var camera: Camera2D = $Camera2D
 
-var was_in_air: bool = false
-var is_landing: bool = false
-var is_interacting: bool = false
-var estaMovendo: bool = false
-var tempo_passo: float = 0.0
-var intervalo_passo: float = 0.35 
+var estavaNoAr: bool = false
+var estaPousando: bool = false
+var estaInteragindo: bool = false
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
+var posicaoNascimento: Vector2 = Vector2(97.0, -32.0)
+var limitesSala: Rect2 = Rect2(0, -1800, 15000, 2600)
 
+const VELOCIDADE = 300.0
+const VELOCIDADE_PULO = -600.0
+
+func _ready() -> void:
+	global_position = posicaoNascimento
+	camera.position = Vector2.ZERO
 
 
 func _physics_process(delta: float) -> void:
-	# Aplica a gravidade sempre
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("interagir") and is_on_floor() and not is_interacting:
-		is_interacting = true
-		AudioManager.tocar_som("interagir")
-		
-		
-	# Lida com o pulo
+	if Input.is_action_just_pressed("interagir") and is_on_floor() and not estaInteragindo:
+		estaInteragindo = true
+		AudioManager.tocarSom("interagir")
+
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		AudioManager.tocar_som("pulo", true)
-		
-	# Pega a direção e lida com o movimento
+		velocity.y = VELOCIDADE_PULO
+		AudioManager.tocarSom("pulo", true)
+
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * VELOCIDADE
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+		velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
+
 	move_and_slide()
-	
-	if velocity.x != 0:
-		estaMovendo = true
 
+	if global_position.y > 420.0:
+		reiniciarNaPosicaoNascimento()
 
-	# Detecta o exato momento em que ele encosta no chão
-	if is_on_floor() and was_in_air:
-		is_landing = true
+	if is_on_floor() and estavaNoAr:
+		estaPousando = true
 		anim.play("land")
 
-	# Atualiza a variável para o próximo frame
-	was_in_air = not is_on_floor()
+	estavaNoAr = not is_on_floor()
 
-	
-	# Lógica de transição de animações padrão
 	if not is_on_floor():
 		if velocity.y < 0:
-			anim.play("jump") 
+			anim.play("jump")
 			if direction > 0:
 				anim.flip_h = true
 			elif direction < 0:
 				anim.flip_h = false
 		else:
-			anim.play("fall") 
+			anim.play("fall")
 			if direction > 0:
 				anim.flip_h = true
 			elif direction < 0:
 				anim.flip_h = false
 	else:
-		if is_landing:
+		if estaPousando:
 			if velocity.x != 0:
-				is_landing = false
+				estaPousando = false
 				anim.play("walk")
 			elif Input.is_anything_pressed():
-					is_landing = false
-					anim.play("idle") 
+				estaPousando = false
+				anim.play("idle")
 		else:
-			if is_interacting == true:
+			if estaInteragindo:
 				anim.play("interagir")
 				await anim.animation_finished
-				is_interacting = false
+				estaInteragindo = false
 			elif direction > 0:
-				anim.flip_h = true 
+				anim.flip_h = true
 				anim.play("walk")
 			elif direction < 0:
-				anim.flip_h = false  
+				anim.flip_h = false
 				anim.play("walk")
-
-			elif not Input.is_anything_pressed() and not is_interacting:
+			elif not Input.is_anything_pressed() and not estaInteragindo:
 				anim.play("idle")
+
+
+func definirPosicaoNascimento(posicao: Vector2) -> void:
+	posicaoNascimento = posicao
+	global_position = posicaoNascimento
+
+
+func reiniciarNaPosicaoNascimento() -> void:
+	global_position = posicaoNascimento
+	velocity = Vector2.ZERO

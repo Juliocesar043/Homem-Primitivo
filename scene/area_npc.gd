@@ -1,25 +1,35 @@
 extends Area2D
 
-var jogador_perto = false
-@onready var minigame = $CanvasLayer/JanelaMinigame
+@onready var minigame: Control = $CanvasLayer/JanelaMinigame
 
-func _ready():
-	minigame.hide() # Garante que a janela inicie fechada
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+var jogadorPerto := false
 
-func _process(_delta):
-	if jogador_perto and (Input.is_key_pressed(KEY_E) or Input.is_action_just_pressed("ui_accept")):
-		if minigame.visible:
-			minigame.hide()
-		else:
-			minigame.show()
-
-func _on_body_entered(body):
-	if body.name.to_lower() == "player" or body.is_in_group("Jogador"):
-		jogador_perto = true
-
-func _on_body_exited(body):
-	if body.name.to_lower() == "player" or body.is_in_group("Jogador"):
-		jogador_perto = false
+func _ready() -> void:
+	if minigame:
 		minigame.hide()
+		if minigame.has_signal("concluido"):
+			minigame.concluido.connect(_aoMinijogoConcluido)
+
+	body_entered.connect(_aoJogadorEntrar)
+	body_exited.connect(_aoJogadorSair)
+
+func _process(_delta: float) -> void:
+	if jogadorPerto and Input.is_action_just_pressed("interagir") and minigame:
+		minigame.alternarJanela()
+
+func _aoJogadorEntrar(body: Node2D) -> void:
+	if _eJogador(body):
+		jogadorPerto = true
+
+func _aoJogadorSair(body: Node2D) -> void:
+	if _eJogador(body):
+		jogadorPerto = false
+		if minigame:
+			minigame.ocultarJanela()
+
+func _eJogador(body: Node2D) -> bool:
+	return body.name.to_lower() == "player" or body.is_in_group("Jogador")
+
+func _aoMinijogoConcluido() -> void:
+	if minigame:
+		minigame.ocultarJanela()
