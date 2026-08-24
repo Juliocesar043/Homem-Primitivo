@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://gdtj37juuvoo"]
 
 [ext_resource type="Script" uid="uid://d00lvue82f57u" path="res://scripts/player.gd" id="1_11m8g"]
+[ext_resource type="Texture2D" uid="uid://c0gv1rjtlfwe3" path="res://interagir.png" id="2_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://c07no8vaonacd" path="res://sprites/idle.png" id="2_kp4u0"]
-[ext_resource type="Texture2D" uid="uid://cql6uolb6rvtf" path="res://sprites/pular.png" id="3_0p7bn"]
-[ext_resource type="Texture2D" uid="uid://7m6l7vuky3p6" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://kp4ytyrpa0qr" path="res://sprites/pular.png" id="3_0p7bn"]
+[ext_resource type="Texture2D" uid="uid://bp4cp3sno4b0c" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://badalvn14ukiv" path="res://assetsflorestaqueimando.png" id="5_opfg8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdgg5"]
 radius = 4.3823814
 height = 130.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6td8g"]
+atlas = ExtResource("2_2qu0p")
+region = Rect2(0, 0, 128, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1dl2"]
+atlas = ExtResource("2_2qu0p")
+region = Rect2(128, 0, 128, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l66pl"]
+atlas = ExtResource("2_2qu0p")
+region = Rect2(256, 0, 128, 132)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrqjl"]
 atlas = ExtResource("3_0p7bn")
@@ -95,6 +109,20 @@ region = Rect2(384, 0, 128, 132)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hdgg5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6td8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1dl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l66pl")
+}],
+"loop": 2,
+"name": &"atacar",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_yrqjl")
@@ -184,7 +212,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=275152579]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(135, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80po8"]
+atlas = ExtResource("5_opfg8")
+region = Rect2(1200, 0, 400, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80po8")
+}],
+"loop": 1,
+"name": &"folha",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D" unique_id=275152579 groups=["ataque", "jogador"]]
 script = ExtResource("1_11m8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=965297750]
@@ -194,10 +240,56 @@ scale = Vector2(5.2482886, 1.0344833)
 shape = SubResource("CapsuleShape2D_hdgg5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1527523247]
+position = Vector2(35, -2)
+scale = Vector2(-0.98750013, 1)
 sprite_frames = SubResource("SpriteFrames_hdgg5")
-animation = &"walk"
+animation = &"atacar"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1935901381]
+limit_enabled = false
 limit_left = 0
+limit_top = -100000000
+limit_right = 100000000
 limit_bottom = 200
+
+[node name="AtaqueFolha" type="Area2D" parent="." unique_id=1708947523 groups=["ataque"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AtaqueFolha" unique_id=2113162582]
+position = Vector2(87, 4)
+shape = SubResource("RectangleShape2D_xrivr")
+disabled = true
+
+[node name="folha" type="AnimatedSprite2D" parent="AtaqueFolha" unique_id=675481490]
+visible = false
+position = Vector2(119, -47.000004)
+rotation = -0.57335913
+scale = Vector2(0.4274359, -0.7668953)
+sprite_frames = SubResource("SpriteFrames_xrivr")
+animation = &"folha"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=539914156]
+
+[node name="VidasLabel" type="Label" parent="HUD" unique_id=145458809]
+offset_left = 22.0
+offset_top = 24.0
+offset_right = 133.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 30
+text = "Vidas: 3"
+
+[node name="NomeFaseLabel" type="Label" parent="HUD" unique_id=568797937]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "A Floresta"
