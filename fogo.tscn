@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1nkq78ygh6je"]
 
 [ext_resource type="Script" uid="uid://dppitmvhe7ye" path="res://fogo.gd" id="1_36til"]
-[ext_resource type="Texture2D" uid="uid://be4s12kgvt8pe" path="res://fogoAnimado.png" id="2_s37p7"]
+[ext_resource type="Texture2D" uid="uid://bv0pqr8idji6l" path="res://fogoAnimado.png" id="2_s37p7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvst4"]
 atlas = ExtResource("2_s37p7")
@@ -34,7 +34,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s1pch")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -47,6 +47,7 @@ script = ExtResource("1_36til")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=739564808]
 sprite_frames = SubResource("SpriteFrames_qogx6")
+autoplay = "default"
 frame = 3
 frame_progress = 1.0
 

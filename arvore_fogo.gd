@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-# Em vez de procurar por texto, arrastaremos os nós direto no Inspetor
 @export var arvore_queimada: Sprite2D
 @export var arvore_normal: Sprite2D
 @export var anim_fogo: AnimatedSprite2D
@@ -12,9 +11,14 @@ func _on_zona_dano_body_entered(body: Node2D) -> void:
 
 func _on_zona_dano_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ataque"):
-		if anim_fogo: anim_fogo.visible = false
-		if arvore_queimada: arvore_queimada.visible = false
-		if arvore_normal: arvore_normal.visible = true
-		if colisao_dano: colisao_dano.set_deferred("disabled", true)
-		
-		
+		_apagar_fogo()
+
+func _apagar_fogo() -> void:
+	if anim_fogo:
+		anim_fogo.visible = false
+	if arvore_queimada:
+		arvore_queimada.visible = false
+	if arvore_normal:
+		arvore_normal.visible = true
+	if colisao_dano:
+		colisao_dano.set_deferred("disabled", true)

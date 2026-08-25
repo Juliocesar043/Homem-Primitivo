@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://gdtj37juuvoo"]
 
 [ext_resource type="Script" uid="uid://d00lvue82f57u" path="res://scripts/player.gd" id="1_11m8g"]
-[ext_resource type="Texture2D" uid="uid://c0gv1rjtlfwe3" path="res://interagir.png" id="2_2qu0p"]
+[ext_resource type="Texture2D" uid="uid://dso0pkwyyuhbu" path="res://interagir.png" id="2_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://c07no8vaonacd" path="res://sprites/idle.png" id="2_kp4u0"]
-[ext_resource type="Texture2D" uid="uid://kp4ytyrpa0qr" path="res://sprites/pular.png" id="3_0p7bn"]
-[ext_resource type="Texture2D" uid="uid://bp4cp3sno4b0c" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
-[ext_resource type="Texture2D" uid="uid://badalvn14ukiv" path="res://assetsflorestaqueimando.png" id="5_opfg8"]
+[ext_resource type="Texture2D" uid="uid://cql6uolb6rvtf" path="res://sprites/pular.png" id="3_0p7bn"]
+[ext_resource type="Texture2D" uid="uid://7m6l7vuky3p6" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://dnttd4elc76i4" path="res://assetsflorestaqueimando.png" id="5_opfg8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdgg5"]
 radius = 4.3823814
-height = 130.0
+height = 125.66661
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6td8g"]
 atlas = ExtResource("2_2qu0p")
@@ -173,6 +173,20 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6td8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1dl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l66pl")
+}],
+"loop": 0,
+"name": &"interagir",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 0.1,
 "texture": SubResource("AtlasTexture_kcewq")
 }, {
@@ -234,20 +248,18 @@ animations = [{
 script = ExtResource("1_11m8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=965297750]
-visible = false
 position = Vector2(-1, 0)
 scale = Vector2(5.2482886, 1.0344833)
 shape = SubResource("CapsuleShape2D_hdgg5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1527523247]
-position = Vector2(35, -2)
+position = Vector2(0, -2)
 scale = Vector2(-0.98750013, 1)
 sprite_frames = SubResource("SpriteFrames_hdgg5")
-animation = &"atacar"
+animation = &"interagir"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1935901381]
-limit_enabled = false
 limit_left = 0
 limit_top = -100000000
 limit_right = 100000000

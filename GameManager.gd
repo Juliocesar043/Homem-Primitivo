@@ -1,28 +1,35 @@
 extends Node
 
-var vidas = 3
+var vidas: int = 3
 
-func perder_vida():
-	# 1. Encontra o jogador na cena
+func perder_vida() -> void:
 	var player = get_tree().get_first_node_in_group("jogador")
 	
-	# 2. Se o jogador existir e já estiver invulnerável, ignora o dano (sai da função)
-	if player and player.invulneravel:
-		return 
+	if not player:
+		return
 		
-	# 3. Tira uma vida
+	# Verifica com segurança se o jogador pode sofrer dano (não está invulnerável)
+	if player.has_method("pode_receber_dano"):
+		if not player.pode_receber_dano():
+			return
+	
+	_descontar_vida()
+	_aplicar_dano_no_jogador(player)
+	_verificar_game_over()
+
+func _descontar_vida() -> void:
 	vidas -= 1
 	print("Vidas restantes: ", vidas)
-	
-	# 4. Faz o jogador sofrer o empurrão
-	if player and player.has_method("receber_dano"):
+
+func _aplicar_dano_no_jogador(player: Node) -> void:
+	if player.has_method("receber_dano"):
 		player.receber_dano()
 		
-		if player.has_method("atualizar_vidas"):
-			player.atualizar_vidas(vidas)
-		
-	# 5. GAME OVER: Se a vida zerar, reseta e recomeça a fase!
+	if player.has_method("atualizar_vidas"):
+		player.atualizar_vidas(vidas)
+
+func _verificar_game_over() -> void:
 	if vidas <= 0:
 		print("Game Over! Recomeçando...")
 		vidas = 3 # Reseta as vidas para 3
-		get_tree().reload_current_scene() # Recarrega a fase atual do zero
+		get_tree().reload_current_scene()
