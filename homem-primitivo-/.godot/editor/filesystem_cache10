@@ -1,0 +1,11 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1786493358
+ceu teste pixelado.jpg::CompressedTexture2D::8414051401261782822::1785682004::1785682006::1::::<><><>0<>0<>89822ae4fba7a41eec9a0a0aeda1277f<>res://.godot/imported/ceu teste pixelado.jpg-a042ec75d52e807261ce785ef8891624.ctex::
+FLORESTA TESTE.jpg::CompressedTexture2D::107228518733584172::1785544782::1785544766::1::::<><><>0<>0<>0dce1ebd5fbb329bbb17c5456f61b5d9<>res://.godot/imported/FLORESTA TESTE.jpg-926296810abd9e07d9ddf5341770872b.ctex::
+floresta.tscn::PackedScene::7544935723705606227::1785680605::0::1::::<><><>0<>0<><>::uid://br7bj8ataohw::::res://FLORESTA TESTE.jpg<>uid://84pvd6vw33h0::::res://player.gd
+fogo.gd::GDScript::2902677032783279447::1785682676::0::1::::<>Node2D<><>0<>0<><>::
+fogo.tscn::PackedScene::161204361882334136::1785682247::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::6751111803857610994::1785285092::1785285114::1::::<><><>0<>0<>16b8d50d9e2870cdb0a481421950faa6<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+montanha layer pixelado teste.webp::CompressedTexture2D::1713471926086277217::1785682004::1785682005::1::::<><><>0<>0<>a46227e5ac9b18b6320398ad19c9b4ff<>res://.godot/imported/montanha layer pixelado teste.webp-623b10475f4a4080a5ac05eb6daa1872.ctex::
+player.gd::GDScript::2377047257929965719::1785681230::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::7051406255606747251::1785681230::0::1::::<><><>0<>0<><>::uid://84pvd6vw33h0::::res://player.gd
