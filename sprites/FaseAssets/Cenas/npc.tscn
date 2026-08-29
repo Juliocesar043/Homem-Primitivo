@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dlphfd8chffb4"]
+
+[ext_resource type="Script" uid="uid://q1xdq15g8i4t" path="res://sprites/FaseAssets/Scripts/npc.gd" id="1_0077i"]
+[ext_resource type="Texture2D" uid="uid://cfyaro50tvm5h" path="res://sprites/FaseAssets/Sprites/VelhoPescador1.png" id="2_kitgr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ku5"]
+size = Vector2(96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kitgr"]
+atlas = ExtResource("2_kitgr")
+region = Rect2(0, 0, 128, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah75v"]
+atlas = ExtResource("2_kitgr")
+region = Rect2(128, 0, 128, 132)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8ku5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kitgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah75v")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="NPC" type="Area2D" unique_id=2074458415]
+script = ExtResource("1_0077i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749611480]
+shape = SubResource("RectangleShape2D_a8ku5")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=287651440]
+position = Vector2(3, 2)
+sprite_frames = SubResource("SpriteFrames_a8ku5")
+autoplay = "default"

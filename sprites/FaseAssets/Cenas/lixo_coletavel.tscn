@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dw4qtnkdeaxae"]
+
+[ext_resource type="Script" uid="uid://igarpimwsxja" path="res://sprites/FaseAssets/Scripts/lixo_coletavel.gd" id="1_04ach"]
+[ext_resource type="Texture2D" uid="uid://cey1bu3157f2e" path="res://sprites/FaseAssets/Sprites/Water+FullColor.png" id="2_5ejgj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu64u"]
+atlas = ExtResource("2_5ejgj")
+region = Rect2(96, 176, 64.42845, 32.290375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ku5"]
+size = Vector2(63, 58.75)
+
+[node name="LixoColetavel" type="Area2D" unique_id=324687931]
+script = ExtResource("1_04ach")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=222503625]
+position = Vector2(-30.547626, 61.25)
+scale = Vector2(4.0684533, 3.6562502)
+texture = SubResource("AtlasTexture_eu64u")
+hframes = 4
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=251226057]
+position = Vector2(-30.5, 62.625)
+shape = SubResource("RectangleShape2D_a8ku5")

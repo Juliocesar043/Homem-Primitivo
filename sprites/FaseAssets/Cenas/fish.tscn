@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bt2x7ony05jhv"]
+
+[ext_resource type="Script" uid="uid://canm2ss44q5b0" path="res://sprites/FaseAssets/Scripts/fish.gd" id="1_gorc3"]
+[ext_resource type="Texture2D" uid="uid://bkgtpmcnohxrw" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Anchovy.png" id="2_61otb"]
+[ext_resource type="Texture2D" uid="uid://b1ivp43yqhpm5" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Angelfish.png" id="3_wadhv"]
+[ext_resource type="Texture2D" uid="uid://dii8rdqkx47sr" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Bass.png" id="4_7fva2"]
+[ext_resource type="Texture2D" uid="uid://tl4my6r7ijf6" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Catfish.png" id="5_lh48t"]
+[ext_resource type="Texture2D" uid="uid://ck4jf0d0np4pt" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Clownfish.png" id="6_vq0vf"]
+[ext_resource type="Texture2D" uid="uid://bqydv32cnsdrm" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Crab - Dungeness.png" id="7_iy7ow"]
+[ext_resource type="Texture2D" uid="uid://lxlnuicadoij" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Goldfish.png" id="8_5ykh4"]
+[ext_resource type="Texture2D" uid="uid://rqhxe55t8sff" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Pufferfish.png" id="9_30lue"]
+[ext_resource type="Texture2D" uid="uid://bkcde3e3yfuqg" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Rainbow Trout.png" id="10_enfh1"]
+[ext_resource type="Texture2D" uid="uid://2j64wxrllp1c" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Surgeonfish.png" id="11_0was3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0vdb"]
+
+[node name="Fish" type="CharacterBody2D" unique_id=1615190418]
+z_index = 5
+script = ExtResource("1_gorc3")
+texturas_peixe = Array[Texture2D]([ExtResource("2_61otb"), ExtResource("3_wadhv"), ExtResource("4_7fva2"), ExtResource("5_lh48t"), ExtResource("6_vq0vf"), ExtResource("7_iy7ow"), ExtResource("8_5ykh4"), ExtResource("9_30lue"), ExtResource("10_enfh1"), ExtResource("11_0was3")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1160307032]
+shape = SubResource("RectangleShape2D_n0vdb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=902235569]
+scale = Vector2(3, 3)

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b7amkcbgtfbw8"]
+
+[ext_resource type="Script" uid="uid://dfs5vqe1ulwnd" path="res://sprites/FaseAssets/Scripts/ninho.gd" id="2_ninho"]
+[ext_resource type="Texture2D" uid="uid://cey1bu3157f2e" path="res://sprites/FaseAssets/Sprites/Water+FullColor.png" id="1_lqg7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu64u"]
+atlas = ExtResource("1_lqg7c")
+region = Rect2(16.010185, 207.29999, 16.21484, 16.700012)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ku5"]
+size = Vector2(15.976588, 15.863247)
+
+[node name="ninho" type="Area2D" unique_id=948101973]
+script = ExtResource("2_ninho")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=531984355]
+position = Vector2(-30.547626, 61.25)
+scale = Vector2(4.0684533, 3.6562502)
+texture = SubResource("AtlasTexture_eu64u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384932568]
+position = Vector2(-30.5, 61)
+scale = Vector2(4.0684533, 3.6562502)
+shape = SubResource("RectangleShape2D_a8ku5")
