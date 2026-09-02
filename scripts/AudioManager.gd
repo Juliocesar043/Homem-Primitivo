@@ -1,6 +1,6 @@
 extends Node
 
-var _sons_carregados: Dictionary = {
+var sonsCarregados: Dictionary = {
 	"pulo": preload("res://sounds/jump.wav"),
 	"interagir": preload("res://sounds/interagir.wav"),
 	"andarGrama": preload("res://sounds/Grama.wav"),
@@ -8,18 +8,18 @@ var _sons_carregados: Dictionary = {
 	"dano": preload("res://sounds/hit.wav")
 }
 
-func tocar_som(nome_do_som: String, variar_pitch: bool = false) -> void:
-	if not _sons_carregados.has(nome_do_som):
-		push_error("O som '%s' não foi encontrado no AudioManager." % nome_do_som)
+func tocarSom(nomeDoSom: String, variarPitch: bool = false) -> void:
+	if not sonsCarregados.has(nomeDoSom):
+		push_error("O som '%s' não foi encontrado no AudioManager." % nomeDoSom)
 		return
 		
-	var audio_player = AudioStreamPlayer.new()
-	audio_player.stream = _sons_carregados[nome_do_som]
+	var reprodutorAudio = AudioStreamPlayer.new()
+	reprodutorAudio.stream = sonsCarregados[nomeDoSom]
 	
-	if variar_pitch:
-		audio_player.pitch_scale = randf_range(0.85, 1.15)
+	if variarPitch:
+		reprodutorAudio.pitch_scale = randf_range(0.85, 1.15)
 	
-	add_child(audio_player)
-	audio_player.play()
+	add_child(reprodutorAudio)
+	reprodutorAudio.play()
 	
-	audio_player.finished.connect(audio_player.queue_free)
+	reprodutorAudio.finished.connect(reprodutorAudio.queue_free)

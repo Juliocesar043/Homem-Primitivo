@@ -2,33 +2,32 @@ extends Node
 
 var vidas: int = 3
 
-func perder_vida() -> void:
-	var player = get_tree().get_first_node_in_group("jogador")
+func perderVida() -> void:
+	var player = get_tree().get_first_node_in_group("player")
 	
 	if not player:
 		return
 		
-	# Verifica com segurança se o jogador pode sofrer dano (não está invulnerável)
-	if player.has_method("pode_receber_dano"):
-		if not player.pode_receber_dano():
+	if player.has_method("podeReceberDano"):
+		if not player.podeReceberDano():
 			return
 	
-	_descontar_vida()
-	_aplicar_dano_no_jogador(player)
-	_verificar_game_over()
+	_descontarVida()
+	_aplicarDanoNoJogador(player)
+	_verificarGameOver()
 
-func _descontar_vida() -> void:
+func _descontarVida() -> void:
 	vidas -= 1
 	print("Vidas restantes: ", vidas)
 
-func _aplicar_dano_no_jogador(player: Node) -> void:
-	if player.has_method("receber_dano"):
-		player.receber_dano()
+func _aplicarDanoNoJogador(player: Node) -> void:
+	if player.has_method("receberDano"):
+		player.receberDano()
 		
-	if player.has_method("atualizar_vidas"):
-		player.atualizar_vidas(vidas)
+	if player.has_method("atualizarVidas"):
+		player.atualizarVidas(vidas)
 
-func _verificar_game_over() -> void:
+func _verificarGameOver() -> void:
 	if vidas <= 0:
 		print("Game Over! Recomeçando...")
 		vidas = 3 # Reseta as vidas para 3

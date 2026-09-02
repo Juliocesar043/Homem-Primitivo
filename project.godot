@@ -28,6 +28,13 @@ window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[importer_defaults]
+
+wav={
+&"edit/normalize": true,
+&"force/max_rate": true
+}
+
 [input]
 
 ui_accept={

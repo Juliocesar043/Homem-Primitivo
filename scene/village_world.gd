@@ -37,6 +37,7 @@ func _ready() -> void:
 		camera.limit_bottom = 200
 		
 
+	
 	for nome_area in DESBLOQUEIOS_POR_AREA.keys():
 		var area: Area2D = get_node_or_null(nome_area)
 		if area:
@@ -60,9 +61,15 @@ func _process(_delta: float) -> void:
 		if minijogo != null and minijogo.visible:
 			minijogo.ocultarJanela()
 			return
+			
 
-		if areaInteracao == null:
-			return
+	if jogador.global_position.y > 200:
+			jogador.receberDano()
+			jogador.global_position = NASCIMENTO_VILA
+			
+
+	if areaInteracao == null:
+		return
 
 		var nome_area: String = areaInteracao.name
 		if nome_area == "Porta":

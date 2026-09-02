@@ -8256,7 +8256,7 @@ flip_h = true
 [node name="Portal" parent="ParallaxBackground/ParallaxLayer" unique_id=706304717 instance=ExtResource("7_vhhyr")]
 position = Vector2(16, -12)
 scale = Vector2(1.5, 3)
-proxima_cena = "uid://du1aonux6dp77"
+proximaCena = "uid://du1aonux6dp77"
 
 [node name="StaticBody2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1605638825 instance=ExtResource("8_yorot")]
 position = Vector2(1067, 699)

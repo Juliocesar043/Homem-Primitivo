@@ -1,24 +1,24 @@
 extends StaticBody2D
 
-@export var arvore_queimada: Sprite2D
-@export var arvore_normal: Sprite2D
-@export var anim_fogo: AnimatedSprite2D
-@export var colisao_dano: CollisionShape2D
+@export var arvoreQueimada: Sprite2D
+@export var arvoreNormal: Sprite2D
+@export var animFogo: AnimatedSprite2D
+@export var colisaoDano: CollisionShape2D
 
 func _on_zona_dano_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jogador"):
-		GameManager.perder_vida()
+		GameManager.perderVida()
 
 func _on_zona_dano_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ataque"):
-		_apagar_fogo()
+		_apagarFogo()
 
-func _apagar_fogo() -> void:
-	if anim_fogo:
-		anim_fogo.visible = false
-	if arvore_queimada:
-		arvore_queimada.visible = false
-	if arvore_normal:
-		arvore_normal.visible = true
-	if colisao_dano:
-		colisao_dano.set_deferred("disabled", true)
+func _apagarFogo() -> void:
+	if animFogo:
+		animFogo.visible = false
+	if arvoreQueimada:
+		arvoreQueimada.visible = false
+	if arvoreNormal:
+		arvoreNormal.visible = true
+	if colisaoDano:
+		colisaoDano.set_deferred("disabled", true)

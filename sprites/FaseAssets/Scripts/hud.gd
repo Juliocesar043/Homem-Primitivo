@@ -56,7 +56,7 @@ func _ready() -> void:
 	call_deferred("_conectar_ao_game_manager")
 
 func _conectar_ao_jogador() -> void:
-	var player = get_tree().get_first_node_in_group("player")
+	var player = get_node_or_null("player")
 	if player and not player.item_changed.is_connected(_on_player_item_changed):
 		player.item_changed.connect(_on_player_item_changed)
 		_on_player_item_changed(player.equipped_item)

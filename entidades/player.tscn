@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gdtj37juuvoo"]
 
-[ext_resource type="Script" uid="uid://d00lvue82f57u" path="res://scripts/player.gd" id="1_11m8g"]
+[ext_resource type="Script" uid="uid://d00lvue82f57u" path="res://scripts/player.gd" id="1_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://dso0pkwyyuhbu" path="res://interagir.png" id="2_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://c07no8vaonacd" path="res://sprites/idle.png" id="2_kp4u0"]
 [ext_resource type="Texture2D" uid="uid://cql6uolb6rvtf" path="res://sprites/pular.png" id="3_0p7bn"]
@@ -245,7 +245,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=275152579 groups=["ataque", "jogador"]]
-script = ExtResource("1_11m8g")
+script = ExtResource("1_2qu0p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=965297750]
 position = Vector2(-1, 0)
@@ -253,10 +253,9 @@ scale = Vector2(5.2482886, 1.0344833)
 shape = SubResource("CapsuleShape2D_hdgg5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1527523247]
-position = Vector2(0, -2)
 scale = Vector2(-0.98750013, 1)
 sprite_frames = SubResource("SpriteFrames_hdgg5")
-animation = &"interagir"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1935901381]

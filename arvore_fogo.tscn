@@ -61,12 +61,12 @@ size = Vector2(76, 117)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(74, 119.5)
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=1605638825 node_paths=PackedStringArray("arvore_queimada", "arvore_normal", "anim_fogo", "colisao_dano")]
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1605638825 node_paths=PackedStringArray("arvoreQueimada", "arvoreNormal", "animFogo", "colisaoDano")]
 script = ExtResource("1_p52je")
-arvore_queimada = NodePath("Sprite2D")
-arvore_normal = NodePath("Sprite2D2")
-anim_fogo = NodePath("AnimatedSprite2D")
-colisao_dano = NodePath("ZonaDano/CollisionShape2D")
+arvoreQueimada = NodePath("Sprite2D")
+arvoreNormal = NodePath("Sprite2D2")
+animFogo = NodePath("AnimatedSprite2D")
+colisaoDano = NodePath("ZonaDano/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=89666532]
 

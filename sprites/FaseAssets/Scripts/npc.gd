@@ -13,10 +13,9 @@ var conversando: bool = false
 var indice_fala: int = 0
 
 var _jogador: Node2D = null
-var _enter_pressionado_anteriormente: bool = false
 var dica_dialogo: Label = null
 
-const TEXTO_DICA: String = "Aperte Enter para dialogo"
+const TEXTO_DICA: String = "Aperte F para dialogar"
 
 func _ready() -> void:
 	# Conecta os sinais de entrada e saída da área
@@ -80,12 +79,8 @@ func _criar_dica_dialogo() -> void:
 	add_child(dica_dialogo)
 
 func _process(_delta: float) -> void:
-	var enter_pressionado := Input.is_key_pressed(KEY_ENTER)
-	var enter_novo := enter_pressionado and not _enter_pressionado_anteriormente
-	var aceitar := Input.is_action_just_pressed("ui_accept") or enter_novo
-	if jogador_perto and aceitar:
+	if jogador_perto and Input.is_action_just_pressed("interagir"):
 		avancar_dialogo()
-	_enter_pressionado_anteriormente = enter_pressionado
 	if dica_dialogo and dica_dialogo.visible and is_instance_valid(_jogador):
 		dica_dialogo.global_position = _jogador.global_position + Vector2(-160, 90)
 
