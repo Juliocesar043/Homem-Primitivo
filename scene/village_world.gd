@@ -64,7 +64,8 @@ func _process(_delta: float) -> void:
 			
 
 	if jogador.global_position.y > 200:
-			jogador.receberDano()
+			GameManager.perderVida()
+			await get_tree().create_timer(1.0).timeout
 			jogador.global_position = NASCIMENTO_VILA
 			
 
