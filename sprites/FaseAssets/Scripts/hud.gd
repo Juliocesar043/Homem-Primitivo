@@ -57,9 +57,11 @@ func _ready() -> void:
 
 func _conectar_ao_jogador() -> void:
 	var player = get_node_or_null("player")
-	if player and not player.item_changed.is_connected(_on_player_item_changed):
-		player.item_changed.connect(_on_player_item_changed)
-		_on_player_item_changed(player.equipped_item)
+	if player == null or not player.has_signal("itemAlterado"):
+		return
+	if not player.is_connected("itemAlterado", _on_player_item_changed):
+		player.connect("itemAlterado", _on_player_item_changed)
+	_on_player_item_changed(player.get("itemEquipado"))
 
 func _on_player_item_changed(new_item: int) -> void:
 	moldura_selecao_1.texture = textura_moldura_1 if new_item == 1 else null

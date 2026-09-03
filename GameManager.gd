@@ -7,6 +7,9 @@ func perderVida() -> void:
 	
 	if not player:
 		return
+
+	if player.has_method("possuiSistemaDeVida") and not player.possuiSistemaDeVida():
+		return
 		
 	if player.has_method("podeReceberDano"):
 		if not player.podeReceberDano():

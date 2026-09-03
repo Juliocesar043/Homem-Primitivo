@@ -28,15 +28,15 @@ func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
 	_jogador_dentro = body
-	if not body.is_connected("item_changed", _on_player_item_changed):
-		body.connect("item_changed", _on_player_item_changed)
+	if body.has_signal("itemAlterado") and not body.is_connected("itemAlterado", _on_player_item_changed):
+		body.connect("itemAlterado", _on_player_item_changed)
 	_tentar_coletar(body)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body != _jogador_dentro:
 		return
-	if body.is_connected("item_changed", _on_player_item_changed):
-		body.disconnect("item_changed", _on_player_item_changed)
+	if body.has_signal("itemAlterado") and body.is_connected("itemAlterado", _on_player_item_changed):
+		body.disconnect("itemAlterado", _on_player_item_changed)
 	_jogador_dentro = null
 
 func _on_player_item_changed(_new_item: int) -> void:
@@ -46,7 +46,7 @@ func _on_player_item_changed(_new_item: int) -> void:
 func _tentar_coletar(body: Node2D) -> void:
 	if _removido:
 		return
-	if body.get("equipped_item") != ITEM_CORRETO:
+	if body.get("itemEquipado") != ITEM_CORRETO:
 		return
 	var manager = get_tree().get_first_node_in_group("game_manager")
 	if manager and manager.has_method("missao_em_andamento") and not manager.missao_em_andamento():

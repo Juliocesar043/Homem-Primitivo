@@ -1,9 +1,9 @@
-78098b89c88a74ebe8c20117b8754620
+63f7b34db8d8cdea90c76aacccf841ec
 ::res://::1788473455
 arvore_fogo.gd::GDScript::4762121131985435275::1788394033::0::1::::<>StaticBody2D<><>0<>0<><>::
 arvore_fogo.tscn::PackedScene::435315104705096294::1788394033::0::1::::<><><>0<>0<><>::uid://b832o622735tn::::res://arvore_fogo.gd<>uid://dqm0tnnnenxj4::::res://arvorePassaroQueimando.png<>uid://dd32do4ohyqfn::::res://arvore limpa.png<>uid://c7gfve6p1jb03::::res://zona_dano.gd
 fogo.gd::GDScript::242458255912728932::1788394033::0::1::::<>Area2D<><>0<>0<><>::
-GameManager.gd::GDScript::6162815268203009067::1788394033::0::1::::<>Node<><>0<>0<><>::
+GameManager.gd::GDScript::6162815268203009067::1788475032::0::1::::<>Node<><>0<>0<><>::
 interagir.png::CompressedTexture2D::8453107797190973042::1788394033::1788394060::1::::<><><>0<>0<>3196130494e0265c7aeb9058cf573404<>res://.godot/imported/interagir.png-6f8d0366ad0bd4921f8fb8367749982d.ctex::
 mainlev_build.png::CompressedTexture2D::7985200506042478977::1788394033::1788394060::1::::<><><>0<>0<>380ddbeeda0a110e53d235ce015f9bc7<>res://.godot/imported/mainlev_build.png-cb9110b344ba395cc433b79b4ca9fe9b.ctex::
 porta caverna.webp::CompressedTexture2D::5498373857854888361::1788394033::1788394060::1::::<><><>0<>0<>184b8d06fe6e0afe148dc86c13944a0c<>res://.godot/imported/porta caverna.webp-5b79582f0ada873ce57d1524577aacbf.ctex::
@@ -30,7 +30,7 @@ village.tscn::PackedScene::1146148136011709001::1788394033::0::1::::<><><>0<>0<>
 village_world.gd::GDScript::8263030978222751919::1788394537::0::1::::<>Node2D<><>0<>0<><>::
 ::res://scripts/::1788394033
 AudioManager.gd::GDScript::3176968437089428400::1788394033::0::1::::<>Node<><>0<>0<><>::
-player.gd::GDScript::8966299032655944004::1788394033::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.gd::GDScript::8966299032655944004::1788475133::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ::res://sounds/::1788394062
 ataque.wav::AudioStreamWAV::6571184498364410594::1788394033::1788394062::1::::<><><>0<>0<>dc4a5620fd4faa2ae969728b20637cdf<>res://.godot/imported/ataque.wav-7c6078fbba4717d5e02c4e91ba87f697.sample::
 Grama.wav::AudioStreamWAV::1548012682699406241::1788394033::1788394062::1::::<><><>0<>0<>3478df1d43bd3079bd2183e08c539fef<>res://.godot/imported/Grama.wav-11b8f2d5f1fa617eb4584586691816ac.sample::
@@ -114,10 +114,10 @@ npc.tscn::PackedScene::7962739153976469483::1788394033::0::1::::<><><>0<>0<><>::
 ::res://sprites/FaseAssets/Scripts/::1788394033
 camera_2d_2.gd::GDScript::1234632808798186705::1788394033::0::1::::<>Camera2D<><>0<>0<><>::
 fish.gd::GDScript::4800456073121435683::1788394033::0::1::::<>CharacterBody2D<><>0<>0<><>::
-hud.gd::GDScript::5185795085026634756::1788394033::0::1::::<>CanvasLayer<><>0<>0<><>::
+hud.gd::GDScript::5185795085026634756::1788474919::0::1::::<>CanvasLayer<><>0<>0<><>::
 lake_mission_manager.gd::GDScript::2828003864526472625::1788394033::0::1::::<>Node<><>0<>0<><>::
-lixo_coletavel.gd::GDScript::573928174909047294::1788394033::0::1::::<>Area2D<><>0<>0<><>::
-ninho.gd::GDScript::7549224928058863725::1788394033::0::1::::<>Area2D<><>0<>0<><>::
+lixo_coletavel.gd::GDScript::573928174909047294::1788474919::0::1::::<>Area2D<><>0<>0<><>::
+ninho.gd::GDScript::7549224928058863725::1788474919::0::1::::<>Area2D<><>0<>0<><>::
 npc.gd::GDScript::1178098049940320821::1788394033::0::1::::<>Area2D<><>0<>0<><>::
 ::res://sprites/FaseAssets/Sprites/::1788394062
 all.png::CompressedTexture2D::4239647211233651428::1788394033::1788394062::1::::<><><>0<>0<>888d17de4ac26df02575aaff825168ae<>res://.godot/imported/all.png-8d52b72882e05392e4cd62eed2bc3565.ctex::

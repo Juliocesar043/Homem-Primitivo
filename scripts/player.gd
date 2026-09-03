@@ -30,6 +30,7 @@ var estaAtacando: bool = false
 var estaTomandoDano: bool = false
 var estaInvulneravel: bool = false
 var posicaoNascimento: Vector2 = Vector2.ZERO
+var sistemaVidaAtivo: bool = true
 
 # ==============================================================================
 # VARIÁVEIS DE ESTADO (LAGO E NADO)
@@ -47,6 +48,7 @@ signal itemAlterado(novoItem: Item)
 # ==============================================================================
 func _ready() -> void:
 	add_to_group("player")
+	sistemaVidaAtivo = not _estaNaFaseDoLago()
 	_configurarInterface()
 	
 	if animSprite and not animSprite.animation_finished.is_connected(_aoTerminarAnimacaoSprite):
@@ -74,6 +76,13 @@ func _ready() -> void:
 	if hud and hud.has_method("_on_player_item_changed"):
 		itemAlterado.connect(hud._on_player_item_changed)
 		itemAlterado.emit(itemEquipado)
+
+func _estaNaFaseDoLago() -> bool:
+	var cenaAtual := get_tree().current_scene
+	return cenaAtual != null and cenaAtual.name == "Fase_Lago"
+
+func possuiSistemaDeVida() -> bool:
+	return sistemaVidaAtivo
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -234,10 +243,10 @@ func _atacar() -> void:
 # SISTEMA DE DANO
 # ==============================================================================
 func podeReceberDano() -> bool:
-	return not estaInvulneravel
+	return sistemaVidaAtivo and not estaInvulneravel
 
 func receberDano() -> void:
-	if estaInvulneravel:
+	if not sistemaVidaAtivo or estaInvulneravel:
 		return
 		
 	estaInvulneravel = true
@@ -308,15 +317,31 @@ func _aoTerminarAnimacaoSprite() -> void:
 # INTERFACE E FUNÇÕES AUXILIARES
 # ==============================================================================
 func _configurarInterface() -> void:
-	atualizarVidas(GameManager.vidas)
+	if not sistemaVidaAtivo:
+		if hudVidas:
+			hudVidas.visible = false
+	else:
+		atualizarVidas(GameManager.vidas)
 	
 	if hudNomeFase:
-		hudNomeFase.text = nomeFase
+		hudNomeFase.text = _obterNomeFase()
 		await get_tree().create_timer(2.0).timeout
 		
 		if is_instance_valid(hudNomeFase):
 			var interpolacao = get_tree().create_tween()
 			interpolacao.tween_property(hudNomeFase, "modulate:a", 0.0, 1.5)
+
+func _obterNomeFase() -> String:
+	var cenaAtual := get_tree().current_scene
+	if cenaAtual:
+		match cenaAtual.name:
+			"Floresta":
+				return "Floresta"
+			"Village":
+				return "Vila"
+			"Fase_Lago":
+				return "Lago"
+	return nomeFase if nomeFase != null and not nomeFase.is_empty() else ""
 
 func atualizarVidas(qtd: int) -> void:
 	if hudVidas:
