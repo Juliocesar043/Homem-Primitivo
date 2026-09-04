@@ -66,6 +66,11 @@ func _ready() -> void:
 			camera.limit_right = 100000
 			camera.limit_top = -3000
 			camera.limit_bottom = 200
+		elif nomeCena == "floresta":
+			camera.limit_left = 4000
+			camera.limit_top = -1000
+			camera.limit_right = -200
+			camera.limit_bottom = 2500
 		else:
 			camera.limit_left = -10000000
 			camera.limit_top = -10000000

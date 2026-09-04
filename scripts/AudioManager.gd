@@ -16,6 +16,12 @@ func tocarSom(nomeDoSom: String, variarPitch: bool = false) -> void:
 	var reprodutorAudio = AudioStreamPlayer.new()
 	reprodutorAudio.stream = sonsCarregados[nomeDoSom]
 	
+	# Normaliza o volume para não ficar muito alto
+	if nomeDoSom == "atacar":
+		reprodutorAudio.volume_db = -30.0 # O som de ataque é naturalmente muito mais estourado
+	else:
+		reprodutorAudio.volume_db = -15.0
+	
 	if variarPitch:
 		reprodutorAudio.pitch_scale = randf_range(0.85, 1.15)
 	

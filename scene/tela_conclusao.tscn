@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/tela_conclusao.gd" id="1_a42ux"]
+
+[node name="TelaConclusao" type="CanvasLayer" unique_id=1373113088]
+layer = 100
+script = ExtResource("1_a42ux")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=197335264]
+custom_minimum_size = Vector2(400, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=2092055082]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelParabens" type="Label" parent="Panel/VBox" unique_id=886870137]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "PARABÉNS!
+Você concluiu a fase!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="@Control@2" type="Control" parent="Panel/VBox" unique_id=1728336727]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="Panel/VBox" unique_id=1387269372]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BtnRejogar" type="Button" parent="Panel/VBox/HBox" unique_id=207233745]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Rejogar Fase"
+
+[node name="BtnVoltar" type="Button" parent="Panel/VBox/HBox" unique_id=1313841311]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Voltar para Caverna"

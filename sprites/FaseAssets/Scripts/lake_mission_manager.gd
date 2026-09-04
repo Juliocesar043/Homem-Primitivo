@@ -86,6 +86,8 @@ func _verificar_conclusao() -> void:
 			_hud_timer.stop()
 		tempo_atualizado.emit(0)
 		_revelar_peixes()
+		if GameManager.has_method("completar_fase"):
+			GameManager.completar_fase("lago")
 		missao_concluida.emit()
 		
 
