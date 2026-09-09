@@ -1,0 +1,213 @@
+[gd_scene load_steps=8 uid="uid://dbixrfkd60hqhs"]
+
+[ext_resource type="Script" path="res://scripts/como_jogar.gd" id="1_ycj7l"]
+[ext_resource type="FontFile" uid="uid://cmcwybliuqpe6" path="res://fonte/roboto/Roboto-Black.ttf" id="2_wy88c"]
+[ext_resource type="Texture2D" uid="uid://bbrcj01m5bt37" path="res://sprites/fundo-menu.png" id="3_fundo"]
+
+[sub_resource type="FontVariation" id="FontVariation_titulo"]
+base_font = ExtResource("2_wy88c")
+variations/weight = 900
+variations/width = 150.0
+
+[sub_resource type="FontVariation" id="FontVariation_subtitulo"]
+base_font = ExtResource("2_wy88c")
+variations/weight = 700
+
+[sub_resource type="FontVariation" id="FontVariation_texto"]
+base_font = ExtResource("2_wy88c")
+variations/weight = 500
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.1, 0.1, 0.15, 0.95)
+border_color = Color(1, 0.843137, 0.2, 0.8)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+content_margin_left = 28.0
+content_margin_top = 22.0
+content_margin_right = 28.0
+content_margin_bottom = 22.0
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_gk8n5"]
+default_font = SubResource("FontVariation_texto")
+default_font_size = 14
+
+[node name="ComoJogar" type="Control"]
+layout_mode = 3
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+script = ExtResource("1_ycj7l")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+texture = ExtResource("3_fundo")
+expand_mode = 2
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(900, 240)
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="MainVBox" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme = SubResource("Theme_gk8n5")
+theme_override_constants/separation = 8
+
+[node name="HeaderHBox" type="HBoxContainer" parent="CenterContainer/PanelContainer/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="CenterContainer/PanelContainer/MainVBox/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "COMO JOGAR?"
+theme_override_fonts/font = SubResource("FontVariation_titulo")
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(1, 0.843137, 0.2, 1)
+horizontal_alignment = 0
+
+[node name="CloseButton" type="Button" parent="CenterContainer/PanelContainer/MainVBox/HeaderHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(50, 50)
+text = "✕"
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MainVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 2)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MainVBox"]
+layout_mode = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_gk8n5")
+
+[node name="ContentVBox" type="VBoxContainer" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+theme = SubResource("Theme_gk8n5")
+
+[node name="Intro" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "Bem-vindo ao Homem Primitivo! Aqui estão os controles básicos do jogo:"
+autowrap_enabled = true
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(1, 1, 1, 0.9)
+
+[node name="Spacer1" type="Control" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 2)
+
+[node name="Label1" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "MOVIMENTO E AÇÕES"
+theme_override_fonts/font = SubResource("FontVariation_subtitulo")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.843137, 0.2, 1)
+
+[node name="Instruction1" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "A: Mover para a esquerda
+D: Mover para a direita"
+autowrap_enabled = true
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="Spacer2" type="Control" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 3)
+
+[node name="Instruction2" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "ESPAÇO: Pular"
+autowrap_enabled = true
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="Spacer3" type="Control" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 3)
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "INTERAÇÃO E COMBATE"
+theme_override_fonts/font = SubResource("FontVariation_subtitulo")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.843137, 0.2, 1)
+
+[node name="Instruction3" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "E: Ataque com uma folha de bananeira, capaz de gerar uma grande rajada de vento"
+autowrap_enabled = true
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="Spacer4" type="Control" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 3)
+
+[node name="Instruction4" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "F: Interagir com personagens e funcionalidades"
+autowrap_enabled = true
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="Spacer5" type="Control" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 5)
+
+[node name="TipLabel" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "Use os comandos básicos para explorar o mundo e superar os desafios."
+autowrap_enabled = true
+theme_override_fonts/font = SubResource("FontVariation_subtitulo")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.2, 0.8, 1, 1)
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MainVBox/HeaderHBox/CloseButton" to="." method="_on_close_button_pressed"]
