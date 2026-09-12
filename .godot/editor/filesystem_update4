@@ -1,3 +1,2 @@
-res://scene/menu_principal.tscn
-res://scripts/menu_principal.gd
-res://entidades/player.tscn
+res://scene/floresta.tscn
+res://scene/caverna.tscn

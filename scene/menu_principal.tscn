@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://b33hg3vj7uxyy"]
 
-[ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1_menu"]
 [ext_resource type="FontFile" uid="uid://cmcwybliuqpe6" path="res://fonte/roboto/Roboto-Black.ttf" id="1_fa1tu"]
+[ext_resource type="Script" uid="uid://dy0fi0niufff6" path="res://scripts/menu_principal.gd" id="1_menu"]
 [ext_resource type="Texture2D" uid="uid://cibj3idcns844" path="res://sprites/Botao Default.png" id="2_gmcsc"]
-[ext_resource type="Texture2D" uid="uid://bbrcj01m5bt37" path="res://sprites/fundo-menu.png" id="2_ul6ys"]
+[ext_resource type="Texture2D" uid="uid://c6j6gqdm7laim" path="res://sprites/Tela Menu.png" id="3_ikgqb"]
 [ext_resource type="Texture2D" uid="uid://dsmb7j410soal" path="res://sprites/Hover.png" id="3_ul6ys"]
 
 [sub_resource type="FontVariation" id="FontVariation_yoex3"]
@@ -453,8 +453,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ul6ys")
-expand_mode = 1
+texture = ExtResource("3_ikgqb")
+expand_mode = 3
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1835415435]
