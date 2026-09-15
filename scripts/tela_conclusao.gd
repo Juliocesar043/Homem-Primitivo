@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@onready var btn_rejogar = $Panel/VBox/HBox/BtnRejogar
-@onready var btn_voltar = $Panel/VBox/HBox/BtnVoltar
+@onready var btn_rejogar = $VBox/HBox/BtnRejogar
+@onready var btn_voltar = $VBox/HBox/BtnVoltar
 
 func _ready() -> void:
 	btn_rejogar.pressed.connect(_on_rejogar)

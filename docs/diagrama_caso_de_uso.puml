@@ -1,0 +1,150 @@
+@startuml Diagrama_Caso_de_Uso_Homem_Primitivo
+' ==============================================================================
+' DIAGRAMA UML DE CASO DE USO — Homem Primitivo: Em Busca do Equilíbrio
+' Projeto de Extensão Universitária | Godot 4.7
+' ==============================================================================
+
+left to right direction
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam usecaseBackgroundColor #FEFEFE
+skinparam usecaseBorderColor #333333
+skinparam actorBackgroundColor #E8F5E9
+skinparam rectangleBackgroundColor #F5F5F5
+skinparam rectangleBorderColor #666666
+skinparam arrowColor #444444
+skinparam defaultFontSize 13
+skinparam usecaseFontSize 12
+skinparam noteFontSize 11
+
+title Diagrama de Caso de Uso — Homem Primitivo
+
+actor "Jogador" as Jogador
+
+rectangle "Sistema: Homem Primitivo" {
+
+    ' =========================================================================
+    ' CASOS DE USO — Menu e Navegação
+    ' =========================================================================
+    usecase "UC01: Iniciar Jogo" as UC01
+    usecase "UC02: Visualizar\nInstruções" as UC02
+
+    ' =========================================================================
+    ' CASOS DE USO — Ações do Jogador em Jogo
+    ' =========================================================================
+    usecase "UC03: Movimentar\nPersonagem" as UC03
+    note right of UC03
+        Inclui: andar, pular e nadar.
+        Nadar ativa-se automaticamente
+        ao entrar em áreas de água
+        (Fase do Lago).
+    end note
+
+    usecase "UC04: Navegar\nentre Fases" as UC04
+    note right of UC04
+        Transição via portais (Area2D)
+        e portas (Vila → Casa).
+        Cenas: Caverna, Floresta,
+        Vila, Lago, Sala de Pintura.
+    end note
+
+    usecase "UC05: Atacar" as UC05
+    note right of UC05
+        Ataque com folha (tecla E).
+        Apaga fogo de árvores, arbustos
+        e focos avulsos ao atingi-los.
+    end note
+
+    usecase "UC06: Interagir com\nAmbiente" as UC06
+    note right of UC06
+        Ação genérica (tecla F) que
+        dispara interações contextuais
+        com NPCs, pintura e objetos.
+    end note
+
+    ' =========================================================================
+    ' CASOS DE USO — Interações Específicas
+    ' =========================================================================
+    usecase "UC07: Realizar\nMinigame" as UC07
+    note right of UC07
+        Minigame de associação:
+        Sintomas ↔ Curas medicinais.
+        Desbloqueio progressivo de
+        itens ao interagir com NPCs
+        e animais na Vila.
+    end note
+
+    usecase "UC08: Interagir com\nPintura Rupestre" as UC08
+    note right of UC08
+        Registra fases concluídas
+        na pintura da Caverna.
+        Revela partes da pintura
+        conforme progresso.
+    end note
+
+    ' =========================================================================
+    ' CASOS DE USO — Progresso e Ciclo de Jogo
+    ' =========================================================================
+    usecase "UC09: Concluir\nFase" as UC09
+    note right of UC09
+        Condições de conclusão:
+        - Floresta: apagar todos os fogos
+        - Vila: acertar todos os pares
+        Exibe tela de conclusão.
+    end note
+
+    usecase "UC10: Reiniciar\nFase" as UC10
+    note right of UC10
+        Reinicia via:
+        - Botão "Rejogar" (tela conclusão)
+        - Game Over (vidas = 0)
+        - Queda do mapa (y > 1000)
+    end note
+}
+
+' ==============================================================================
+' ASSOCIAÇÕES DO ATOR
+' ==============================================================================
+Jogador --> UC01
+Jogador --> UC02
+Jogador --> UC03
+Jogador --> UC04
+Jogador --> UC05
+Jogador --> UC06
+Jogador --> UC07
+Jogador --> UC08
+Jogador --> UC10
+
+' ==============================================================================
+' RELAÇÕES <<include>> (Obrigatórias)
+' O caso BASE necessita SEMPRE do caso incluído para funcionar.
+' A seta vai do caso base para o caso incluído.
+' ==============================================================================
+UC07 ..> UC06 : <<include>>
+UC08 ..> UC06 : <<include>>
+
+' ==============================================================================
+' RELAÇÕES <<extend>> (Condicionais)
+' O caso de EXTENSÃO estende o caso base SOMENTE sob uma condição.
+' A seta vai do caso de extensão para o caso base (convenção UML).
+' ==============================================================================
+UC09 ..> UC05 : <<extend>>\n[último fogo apagado]
+UC09 ..> UC07 : <<extend>>\n[último par acertado]
+UC10 ..> UC09 : <<extend>>\n[jogador clica Rejogar]
+UC10 ..> UC03 : <<extend>>\n[cair do mapa / Game Over]
+
+' ==============================================================================
+' LEGENDA
+' ==============================================================================
+legend bottom left
+    |= Símbolo |= Significado |
+    | ——→ | Associação (ator → caso de uso) |
+    | ..> <<include>> | Relação obrigatória (sempre executada) |
+    | ..> <<extend>> | Relação condicional (executada sob condição) |
+    ---
+    **Projeto:** Homem Primitivo — Projeto de Extensão
+    **Engine:** Godot 4.7 | GDScript
+    **Ator:** Jogador (único ator do sistema)
+end legend
+
+@enduml

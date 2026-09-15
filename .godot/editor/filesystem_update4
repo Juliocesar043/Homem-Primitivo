@@ -1,2 +1,2 @@
-res://scene/floresta.tscn
-res://scene/caverna.tscn
+res://scene/tela_conclusao.tscn
+res://scripts/tela_conclusao.gd

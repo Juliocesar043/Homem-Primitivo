@@ -1,48 +1,44 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://4ym0w6ym1uu"]
 
-[ext_resource type="Script" path="res://scripts/tela_conclusao.gd" id="1_a42ux"]
+[ext_resource type="Script" uid="uid://ctv5qsmjl2j5a" path="res://scripts/tela_conclusao.gd" id="1_a42ux"]
+[ext_resource type="Texture2D" uid="uid://bldbitiwvbc33" path="res://sprites/telaVitoria.png" id="2_vitoria"]
 
-[node name="TelaConclusao" type="CanvasLayer" unique_id=1373113088]
+[node name="TelaConclusao" type="CanvasLayer" unique_id=1874423134]
 layer = 100
 script = ExtResource("1_a42ux")
 
-[node name="Panel" type="PanelContainer" parent="." unique_id=197335264]
-custom_minimum_size = Vector2(400, 200)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="TextureRect" type="TextureRect" parent="." unique_id=791771351]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_vitoria")
+stretch_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=2092055082]
-layout_mode = 2
+[node name="VBox" type="VBoxContainer" parent="." unique_id=905986630]
+offset_left = 224.0
+offset_top = 264.0
+offset_right = 937.0
+offset_bottom = 364.0
 alignment = 1
 
-[node name="LabelParabens" type="Label" parent="Panel/VBox" unique_id=886870137]
+[node name="HBox" type="HBoxContainer" parent="VBox" unique_id=1684316672]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "PARABÉNS!
-Você concluiu a fase!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="@Control@2" type="Control" parent="Panel/VBox" unique_id=1728336727]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="HBox" type="HBoxContainer" parent="Panel/VBox" unique_id=1387269372]
-layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 130
 alignment = 1
 
-[node name="BtnRejogar" type="Button" parent="Panel/VBox/HBox" unique_id=207233745]
+[node name="BtnRejogar" type="Button" parent="VBox/HBox" unique_id=645177572]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "Rejogar Fase"
 
-[node name="BtnVoltar" type="Button" parent="Panel/VBox/HBox" unique_id=1313841311]
+[node name="BtnVoltar" type="Button" parent="VBox/HBox" unique_id=1936595715]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "Voltar para Caverna"
