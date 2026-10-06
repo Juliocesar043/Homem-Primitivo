@@ -24,6 +24,10 @@ const velocidadeNado: float = 180.0
 # ==============================================================================
 @export var nomeFase: String = "A Floresta"
 
+var tempoProximoPasso: float = 0.0
+var intervaloPasso: float = 0.35 # Intervalo em segundos entre cada som de passo
+var reprodutorPassos: AudioStreamPlayer = null
+
 var estavaNoAr: bool = false
 var estaPousando: bool = false
 var estaAtacando: bool = false
@@ -51,6 +55,11 @@ func _ready() -> void:
 	sistemaVidaAtivo = not _estaNaFaseDoLago()
 	_configurarInterface()
 	
+	# Cria o reprodutor dedicado para sons de passos
+	reprodutorPassos = AudioStreamPlayer.new()
+	reprodutorPassos.volume_db = -42.0
+	add_child(reprodutorPassos)
+	
 	if animSprite and not animSprite.animation_finished.is_connected(_aoTerminarAnimacaoSprite):
 		animSprite.animation_finished.connect(_aoTerminarAnimacaoSprite)
 	
@@ -71,6 +80,11 @@ func _ready() -> void:
 			camera.limit_top = -1000
 			camera.limit_right = -200
 			camera.limit_bottom = 2500
+		elif nomeCena == "Caverna":
+			camera.limit_left = -150
+			camera.limit_top = -500
+			camera.limit_right = 2100
+			camera.limit_bottom = 450
 		else:
 			camera.limit_left = -10000000
 			camera.limit_top = -10000000
@@ -116,6 +130,7 @@ func _processarTerra(delta: float) -> void:
 	tempoNado = 0.0
 	
 	if estaTomandoDano:
+		_pararSomDePasso()
 		return
 	
 	_aplicarGravidade(delta)
@@ -125,14 +140,51 @@ func _processarTerra(delta: float) -> void:
 	if direcao != 0:
 		_virarPersonagem(direcao)
 		velocity.x = direcao * velocidadeMovimento
+		
+		# Lógica de passos ao caminhar no chão
+		if is_on_floor():
+			tempoProximoPasso -= delta
+			if tempoProximoPasso <= 0.0:
+				_tocarSomDePasso()
+				tempoProximoPasso = intervaloPasso
+		else:
+			_pararSomDePasso()
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidadeMovimento)
+		tempoProximoPasso = 0.0
+		_pararSomDePasso()
 		
 	_atualizarAnimacoes()
 
 func _aplicarGravidade(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
+func _tocarSomDePasso() -> void:
+	if not reprodutorPassos:
+		return
+	
+	var nomeCena := ""
+	var cenaAtual = get_tree().current_scene
+	if cenaAtual:
+		nomeCena = cenaAtual.name
+	
+	# Escolhe o som baseado no nome real da cena
+	var som: AudioStream = null
+	match nomeCena:
+		"Caverna":
+			som = AudioManager.sonsCarregados.get("andarPedra")
+		_:
+			som = AudioManager.sonsCarregados.get("andarGrama")
+	
+	if som:
+		reprodutorPassos.stream = som
+		reprodutorPassos.pitch_scale = randf_range(0.85, 1.15)
+		reprodutorPassos.play()
+
+func _pararSomDePasso() -> void:
+	if reprodutorPassos and reprodutorPassos.playing:
+		reprodutorPassos.stop()
 
 func _virarPersonagem(direcao: float) -> void:
 	if direcao < 0:
@@ -335,6 +387,23 @@ func _configurarInterface() -> void:
 		if is_instance_valid(hudNomeFase):
 			var interpolacao = get_tree().create_tween()
 			interpolacao.tween_property(hudNomeFase, "modulate:a", 0.0, 1.5)
+			
+	# Mostrar o tempo de speedrun na caverna se uma run foi concluída
+	var cena_atual = get_tree().current_scene
+	if cena_atual and cena_atual.name == "Caverna" and GameManager.ultima_run_ms > 0:
+		var lbl_speedrun = Label.new()
+		lbl_speedrun.text = "Tempo Total: " + GameManager.formatar_tempo(GameManager.ultima_run_ms)
+		lbl_speedrun.add_theme_font_size_override("font_size", 24)
+		lbl_speedrun.add_theme_color_override("font_color", Color(1.0, 0.84, 0.0)) # Dourado
+		lbl_speedrun.add_theme_color_override("font_shadow_color", Color.BLACK)
+		lbl_speedrun.add_theme_constant_override("shadow_offset_x", 2)
+		lbl_speedrun.add_theme_constant_override("shadow_offset_y", 2)
+		lbl_speedrun.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+		lbl_speedrun.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+		lbl_speedrun.offset_right = -20
+		lbl_speedrun.offset_top = 20
+		if has_node("HUD"):
+			$HUD.add_child(lbl_speedrun)
 
 func _obterNomeFase() -> String:
 	var cenaAtual := get_tree().current_scene

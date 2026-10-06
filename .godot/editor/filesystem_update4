@@ -1,2 +1,7 @@
+res://scripts/GameManager.gd
+res://scripts/AudioManager.gd
+res://scripts/forest_mission_manager.gd
+res://scripts/menu_principal.gd
+res://scripts/pintura_rupestre.gd
+res://scripts/player.gd
 res://scene/tela_conclusao.tscn
-res://scripts/tela_conclusao.gd

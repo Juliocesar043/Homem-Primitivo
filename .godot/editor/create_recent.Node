@@ -1,8 +1,8 @@
+Camera2D
 Sprite2D
 Parallax2D
 StaticBody2D
 CollisionShape2D
 AnimatedSprite2D
-Camera2D
 Area2D
 Node

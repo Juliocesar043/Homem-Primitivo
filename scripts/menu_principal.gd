@@ -4,7 +4,12 @@ extends Control
 var primeiro_mapa: String = "res://scene/caverna.tscn"
 var como_jogar_scene: String = "res://scene/como_jogar.tscn"
 
+func _ready() -> void:
+	pass
+
 func _on_iniciar_jogo_pressed() -> void:
+	# Iniciar o timer de speedrun
+	GameManager.iniciar_run()
 	get_tree().change_scene_to_file(primeiro_mapa)
 
 func _on_como_jogar_pressed() -> void:

@@ -1,0 +1,17 @@
+res://entidades/arbustoFogo.tscn::601a22f0f80f7e30f3cc7fff224d8346::1789067738::res://.godot/exported/133200997/export-169e4b7c21dac37331aabe71935d4c65-arbustoFogo.scn
+res://entidades/arvore_fogo.tscn::dd809776bf8cb8d570c72a8b2bda1e7c::1789067738::res://.godot/exported/133200997/export-8a3e476202301fe4b1f82bd256ea449c-arvore_fogo.scn
+res://entidades/player.tscn::de9878c442baf762006ec2d352cd5ee4::1789067738::res://.godot/exported/133200997/export-98e783722bd90ff10aacc849910404cc-player.scn
+res://scene/caverna.tscn::c23e063b5cf4e22955bc21e54b76d0fe::1789502249::res://.godot/exported/133200997/export-743a9b6052b848d5abae703757aaf944-caverna.scn
+res://scene/como_jogar.tscn::d1f07544fde1a78497f5e64d4165b743::1789067738::res://.godot/exported/133200997/export-bceba1f9420ed9590b0c2f4749d44440-como_jogar.scn
+res://scene/Fase_Lago.tscn::c1c1622d80612c16acf1b96a33c49969::1789067738::res://.godot/exported/133200997/export-7e243d6cc58a3e2aa6733d565b6c63f1-Fase_Lago.scn
+res://scene/floresta.tscn::376a3c2e13f92d6f342fa37f68984b5e::1789175557::res://.godot/exported/133200997/export-e468646fd6e54440de6c5888d6a29a69-floresta.scn
+res://scene/game.tscn::3178a7870fb3044f2223caba7b5fc4ad::1789067715::res://.godot/exported/133200997/export-caa10c3bd03e8ed3318171f5303f6366-game.scn
+res://scene/menu_principal.tscn::cb6ecf80f957cfbde609edebf7daf259::1789173633::res://.godot/exported/133200997/export-0f6ea80e908b54a5f76aff26d8821da2-menu_principal.scn
+res://scene/sala_pintura.tscn::566eb8e08ff3481854aa367a267a33a3::1789067715::res://.godot/exported/133200997/export-6f8b15f718d833aab70286e4570da5d8-sala_pintura.scn
+res://scene/tela_conclusao.tscn::b57c505d05745c0e93619807f9147b58::1791312412::res://.godot/exported/133200997/export-b69a942362a3e868a52868ac38bd5ef8-tela_conclusao.scn
+res://scene/village.tscn::4ffc35da0459928c96bbbcf4135458bb::1789067738::res://.godot/exported/133200997/export-8a6dfcf945769752b09f9b67c3c180fd-village.scn
+res://sprites/FaseAssets/Cenas/fish.tscn::cdba569f18b2f99620105ff676405888::1789067715::res://.godot/exported/133200997/export-a70baad14d16ee57a459a5d00ce37db9-fish.scn
+res://sprites/FaseAssets/Cenas/lixo_coletavel.tscn::a9a1a8e58360ebaba38d59860833ae3e::1789067715::res://.godot/exported/133200997/export-3a3e70575415dae3f2559ba25dfe1c66-lixo_coletavel.scn
+res://sprites/FaseAssets/Cenas/ninho.tscn::96d4972dd308bfb4dfa23203f8bf8f81::1789067715::res://.godot/exported/133200997/export-a2e422d80602d57c97a7aa3dfce0915b-ninho.scn
+res://sprites/FaseAssets/Cenas/npc.tscn::b5339c844c01d67784c8666e8600937a::1789067715::res://.godot/exported/133200997/export-b4a6d0b22e923c7b610b7900065efab0-npc.scn
+res://portal.tscn::e139efe2d083539515f4af7ec4f960d8::1789067738::res://.godot/exported/133200997/export-740f5dc165143dd4cad93dfc5dc8c947-portal.scn
