@@ -6,7 +6,8 @@ var sonsCarregados: Dictionary = {
 	"andarGrama": preload("res://sounds/Grama.wav"),
 	"andarPedra": preload("res://sounds/andandoPedra.wav"),
 	"atacar": preload("res://sounds/ataque.wav"),
-	"dano": preload("res://sounds/hit.wav")
+	"dano": preload("res://sounds/hit.wav"),
+	"vitoria": preload("res://sounds/vitoria.wav")
 }
 
 # --- BGM ---
@@ -75,6 +76,8 @@ func tocarSom(nomeDoSom: String, variarPitch: bool = false) -> void:
 	# Normaliza o volume para não ficar muito alto
 	if nomeDoSom == "atacar":
 		reprodutorAudio.volume_db = -30.0 # O som de ataque é naturalmente muito mais estourado
+	elif nomeDoSom == "vitoria":
+		reprodutorAudio.volume_db = -10.0 # Fanfarra de vitória: precisa se destacar da trilha
 	elif nomeDoSom.begins_with("andar"):
 		reprodutorAudio.volume_db = -35.0 # Sons de passos precisam ser sutis
 	else:

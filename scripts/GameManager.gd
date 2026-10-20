@@ -42,6 +42,15 @@ func resetar_jogo() -> void:
 func completar_fase(nome_fase: String) -> void:
 	if fases_concluidas.has(nome_fase):
 		fases_concluidas[nome_fase] = true
+	_tocarSomVitoria()
+
+## Toca a fanfarra de vitória.
+## Todas as fases (Floresta, Lago e Vila) passam por `completar_fase()`,
+## então este é o único ponto necessário para o som tocar ao terminar qualquer fase.
+func _tocarSomVitoria() -> void:
+	if AudioManager != null and AudioManager.has_method("tocarSom"):
+		AudioManager.tocarSom("vitoria")
+
 func perderVida() -> void:
 	var player = get_tree().get_first_node_in_group("player")
 	

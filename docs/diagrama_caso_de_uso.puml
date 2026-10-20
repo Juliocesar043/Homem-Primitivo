@@ -69,9 +69,15 @@ rectangle "Sistema: Homem Primitivo" {
     note right of UC07
         Minigame de associação:
         Sintomas ↔ Curas medicinais.
-        Desbloqueio progressivo de
-        itens ao interagir com NPCs
-        e animais na Vila.
+        A Tabela de Tratamentos fica
+        na placa no meio da Vila e só
+        abre por lá (tecla F).
+        Os aldeões revelam o ícone da
+        doença e os animais o ícone do
+        remédio, ambos apenas como
+        imagem acima do jogador.
+        Os pares só podem ser usados
+        após visitar o NPC e o animal.
     end note
 
     usecase "UC08: Interagir com\nPintura Rupestre" as UC08

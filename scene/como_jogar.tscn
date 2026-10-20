@@ -202,6 +202,35 @@ theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
 layout_mode = 2
 custom_minimum_size = Vector2(0, 5)
 
+[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "A VILA E A TABELA DE TRATAMENTOS"
+theme_override_fonts/font = SubResource("FontVariation_subtitulo")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.843137, 0.2, 1)
+
+[node name="Instruction5" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "Na Vila, interaja (F) com os aldeões para ver, acima do seu personagem, apenas o ícone da doença que eles apresentam. Interaja com os animais para ver o ícone do remédio que eles fornecem."
+autowrap_enabled = true
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="Spacer6" type="Control" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 3)
+
+[node name="Instruction6" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "Depois, vá até a placa no meio da vila e interaja (F) para abrir a Tabela de Tratamentos e associar cada sintoma ao seu remédio correto."
+autowrap_enabled = true
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="Spacer7" type="Control" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 5)
+
 [node name="TipLabel" type="Label" parent="CenterContainer/PanelContainer/MainVBox/ScrollContainer/ContentVBox"]
 layout_mode = 2
 text = "Use os comandos básicos para explorar o mundo e superar os desafios."
