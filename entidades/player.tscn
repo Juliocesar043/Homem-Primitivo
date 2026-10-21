@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d00lvue82f57u" path="res://scripts/player.gd" id="1_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://dso0pkwyyuhbu" path="res://interagir.png" id="2_2qu0p"]
-[ext_resource type="Texture2D" uid="uid://c07no8vaonacd" path="res://sprites/idle.png" id="2_kp4u0"]
-[ext_resource type="Texture2D" uid="uid://cql6uolb6rvtf" path="res://sprites/pular.png" id="3_0p7bn"]
-[ext_resource type="Texture2D" uid="uid://7m6l7vuky3p6" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://byrstum8lsiuq" path="res://sprites/idle.png" id="2_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://cr8jfx32i6kbv" path="res://sprites/pular.png" id="3_0p7bn"]
+[ext_resource type="Texture2D" uid="uid://b5ck4konqitub" path="res://sprites/Andando-Personagem.png" id="3_kp4u0"]
 [ext_resource type="Texture2D" uid="uid://dnttd4elc76i4" path="res://assetsflorestaqueimando.png" id="5_opfg8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdgg5"]
@@ -303,4 +303,4 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
-text = "A Floresta"
+text = "A Caverna"

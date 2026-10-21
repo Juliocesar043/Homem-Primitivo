@@ -9,11 +9,7 @@ extends CanvasLayer
 @onready var timer_label: Label = get_node_or_null("TimerLabel")
 @onready var timer_fundo: Control = get_node_or_null("TimerFundo")
 
-# Caminhos originais mantidos
-@onready var menu_vitoria: Control = get_node_or_null("MenuVitoria")
-@onready var label_victory: Label = get_node_or_null("MenuVitoria/VBoxContainer/LabelVictory")
-@onready var btn_reiniciar: TextureButton = get_node_or_null("MenuVitoria/VBoxContainer/HBoxContainer/BtnReiniciar")
-@onready var btn_voltar: TextureButton = get_node_or_null("MenuVitoria/VBoxContainer/HBoxContainer/BtnVoltar")
+
 
 ## Selecione a cena de destino do botão 'Voltar' no Inspector
 @export_file("*.tscn") var cena_destino: String = ""
@@ -33,30 +29,14 @@ func _ready() -> void:
 	if timer_fundo:
 		timer_fundo.visible = false
 
-	# Garante via código que o painel de fundo não bloqueie o clique do mouse
-	if menu_vitoria:
-		menu_vitoria.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if fundo_geral:
 		fundo_geral.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-	_definir_visibilidade_vitoria(false)
-
-	# Configura permissão de clique direto nos botões
-	if btn_reiniciar:
-		btn_reiniciar.mouse_filter = Control.MOUSE_FILTER_STOP
-		if not btn_reiniciar.pressed.is_connected(_on_btn_reiniciar_pressed):
-			btn_reiniciar.pressed.connect(_on_btn_reiniciar_pressed)
-			
-	if btn_voltar:
-		btn_voltar.mouse_filter = Control.MOUSE_FILTER_STOP
-		if not btn_voltar.pressed.is_connected(_on_btn_voltar_pressed):
-			btn_voltar.pressed.connect(_on_btn_voltar_pressed)
 
 	call_deferred("_conectar_ao_jogador")
 	call_deferred("_conectar_ao_game_manager")
 
 func _conectar_ao_jogador() -> void:
-	var player = get_node_or_null("player")
+	var player = get_tree().get_first_node_in_group("player")
 	if player == null or not player.has_signal("itemAlterado"):
 		return
 	if not player.is_connected("itemAlterado", _on_player_item_changed):
@@ -102,24 +82,11 @@ func _on_missao_concluida() -> void:
 	if timer_fundo:
 		timer_fundo.visible = false
 	
-	_definir_visibilidade_vitoria(true)
+	var tela = load("res://scene/tela_conclusao.tscn").instantiate()
+	get_tree().current_scene.add_child(tela)
 
-func _definir_visibilidade_vitoria(visivel: bool) -> void:
-	if menu_vitoria:
-		menu_vitoria.visible = visivel
-	if btn_reiniciar:
-		btn_reiniciar.visible = visivel
-	if btn_voltar:
-		btn_voltar.visible = visivel
 
-func _on_btn_reiniciar_pressed() -> void:
-	get_tree().reload_current_scene()
 
-func _on_btn_voltar_pressed() -> void:
-	if cena_destino != "":
-		get_tree().change_scene_to_file(cena_destino)
-	else:
-		push_warning("Configure a 'cena_destino' no Inspector da HUD!")
 
 func mostrar_dialogo(texto: String) -> void:
 	if caixa_dialogo and texto_dialogo:

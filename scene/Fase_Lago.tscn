@@ -1,33 +1,47 @@
-[gd_scene format=4 uid="uid://dvhpb05q6gjoo"]
+[gd_scene format=4]
 
-[ext_resource type="PackedScene" uid="uid://gdtj37juuvoo" path="res://entidades/player.tscn" id="1_qe65w"]
-[ext_resource type="Texture2D" uid="uid://bp2yi68sc7hjt" path="res://sprites/tileset-chao.png" id="2_ing66"]
-[ext_resource type="Script" uid="uid://ruchsuwixhnd" path="res://sprites/FaseAssets/Scripts/camera_2d_2.gd" id="2_ptr5x"]
-[ext_resource type="Texture2D" uid="uid://dofxepogtx1oi" path="res://sprites/FaseAssets/Sprites/Water+.png" id="3_w85xs"]
-[ext_resource type="Texture2D" uid="uid://bowre5g670wtv" path="res://sprites/arvores.png" id="4_rpydd"]
-[ext_resource type="Texture2D" uid="uid://cx6ywtex2mgyn" path="res://sprites/FaseAssets/Sprites/forest_demo_objects.png" id="5_aafxv"]
-[ext_resource type="Texture2D" uid="uid://dnkcoxgj282bb" path="res://sprites/FaseAssets/Sprites/house2.png" id="6_hhmbr"]
-[ext_resource type="Texture2D" uid="uid://b27sospbe4ub5" path="res://sprites/FaseAssets/Sprites/objects_demo.png" id="6_yy2dt"]
-[ext_resource type="Texture2D" uid="uid://cw0844gtwubab" path="res://sprites/FaseAssets/Sprites/Bubbling_Oil_frames (16 x 32).png" id="7_7kys0"]
-[ext_resource type="Texture2D" uid="uid://q4n44ik4mqko" path="res://sprites/FaseAssets/Sprites/house3.png" id="7_ptr5x"]
-[ext_resource type="Texture2D" uid="uid://dwet7m7rc6ate" path="res://sprites/FaseAssets/Sprites/walls_roofs_doors_demo.png" id="8_wkkjy"]
-[ext_resource type="Texture2D" uid="uid://l7dhdbxg7hmf" path="res://sprites/FaseAssets/Sprites/Tropics_entities (16 x 16).png" id="9_8o05f"]
-[ext_resource type="Texture2D" uid="uid://bos1uky2hlnch" path="res://sprites/FaseAssets/Sprites/Background parts/5 - Sky_color.png" id="10_a1240"]
-[ext_resource type="Texture2D" uid="uid://dd58bmfjp2g10" path="res://sprites/FaseAssets/Sprites/Water+FullColor.png" id="10_slpsl"]
-[ext_resource type="Texture2D" uid="uid://d33h3xb5vfedu" path="res://sprites/FaseAssets/Sprites/Background parts/3 - Floating_clouds.png" id="11_slpsl"]
-[ext_resource type="Texture2D" uid="uid://b5kc7enyea78" path="res://sprites/FaseAssets/Sprites/Background parts/4 - Background_clouds.png" id="12_hhmbr"]
-[ext_resource type="Texture2D" uid="uid://cerpq6onsklcr" path="res://sprites/FaseAssets/Sprites/MediavelFree.png" id="17_j1oik"]
-[ext_resource type="Script" uid="uid://cf5bj1h27h72w" path="res://sprites/FaseAssets/Scripts/hud.gd" id="17_shnxv"]
-[ext_resource type="Texture2D" uid="uid://c0ou5iooywlqq" path="res://sprites/FaseAssets/Sprites/fishing_gear.png" id="17_tfon6"]
-[ext_resource type="Texture2D" uid="uid://b7pdhngx6vcs1" path="res://sprites/FaseAssets/Sprites/Items.png" id="18_s4gmf"]
-[ext_resource type="PackedScene" uid="uid://dw4qtnkdeaxae" path="res://sprites/FaseAssets/Cenas/lixo_coletavel.tscn" id="21_fkbr8"]
-[ext_resource type="FontFile" uid="uid://biynurcfehxl0" path="res://sprites/FaseAssets/Sprites/PressStart2P-Regular.ttf" id="21_qcyrp"]
-[ext_resource type="Texture2D" uid="uid://bnuk0ambd6c3i" path="res://sprites/FaseAssets/Sprites/freeversion.png" id="22_iu1eb"]
-[ext_resource type="PackedScene" uid="uid://b7amkcbgtfbw8" path="res://sprites/FaseAssets/Cenas/ninho.tscn" id="22_mu4ir"]
-[ext_resource type="PackedScene" uid="uid://dlphfd8chffb4" path="res://sprites/FaseAssets/Cenas/npc.tscn" id="23_uigh6"]
-[ext_resource type="Script" uid="uid://bgj52s52g0sgv" path="res://sprites/FaseAssets/Scripts/lake_mission_manager.gd" id="24_sv3mu"]
-[ext_resource type="PackedScene" uid="uid://bt2x7ony05jhv" path="res://sprites/FaseAssets/Cenas/fish.tscn" id="26_5lbkr"]
+[ext_resource type="PackedScene" path="res://entidades/player.tscn" id="1_qe65w"]
+[ext_resource type="Texture2D" path="res://sprites/tileset-chao.png" id="2_ing66"]
+[ext_resource type="Script" path="res://sprites/FaseAssets/Scripts/camera_2d_2.gd" id="2_ptr5x"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Water+.png" id="3_w85xs"]
+[ext_resource type="Texture2D" path="res://sprites/arvores.png" id="4_rpydd"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/forest_demo_objects.png" id="5_aafxv"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/house2.png" id="6_hhmbr"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/objects_demo.png" id="6_yy2dt"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Bubbling_Oil_frames (16 x 32).png" id="7_7kys0"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/house3.png" id="7_ptr5x"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/walls_roofs_doors_demo.png" id="8_wkkjy"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Tropics_entities (16 x 16).png" id="9_8o05f"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Background parts/5 - Sky_color.png" id="10_a1240"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Water+FullColor.png" id="10_slpsl"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Background parts/3 - Floating_clouds.png" id="11_slpsl"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Background parts/4 - Background_clouds.png" id="12_hhmbr"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/MediavelFree.png" id="17_j1oik"]
+[ext_resource type="Script" path="res://sprites/FaseAssets/Scripts/hud.gd" id="17_shnxv"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/fishing_gear.png" id="17_tfon6"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Items.png" id="18_s4gmf"]
+[ext_resource type="PackedScene" path="res://sprites/FaseAssets/Cenas/lixo_coletavel.tscn" id="21_fkbr8"]
+[ext_resource type="FontFile" path="res://sprites/FaseAssets/Sprites/PressStart2P-Regular.ttf" id="21_qcyrp"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/freeversion.png" id="22_iu1eb"]
+[ext_resource type="PackedScene" path="res://sprites/FaseAssets/Cenas/ninho.tscn" id="22_mu4ir"]
+[ext_resource type="PackedScene" path="res://sprites/FaseAssets/Cenas/npc.tscn" id="23_uigh6"]
+[ext_resource type="Script" path="res://sprites/FaseAssets/Scripts/lixo_coletavel.gd" id="24_mdaes"]
+[ext_resource type="PackedScene" path="res://sprites/FaseAssets/Cenas/fish.tscn" id="26_5lbkr"]
+[ext_resource type="Script" path="res://sprites/FaseAssets/Scripts/ninho.gd" id="26_f6yn5"]
+[ext_resource type="Script" path="res://sprites/FaseAssets/Scripts/npc.gd" id="28_pgw3m"]
+[ext_resource type="Script" path="res://sprites/FaseAssets/Scripts/fish.gd" id="30_1lbjb"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Anchovy.png" id="31_yd4wo"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Angelfish.png" id="32_x1ooe"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Bass.png" id="33_pb3w4"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Catfish.png" id="34_516b4"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Clownfish.png" id="35_w5fol"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Crab - Dungeness.png" id="36_mp6os"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Goldfish.png" id="37_fdesf"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Pufferfish.png" id="38_th6rf"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Rainbow Trout.png" id="39_p73c2"]
+[ext_resource type="Texture2D" path="res://sprites/FaseAssets/Sprites/Fishing Pack/Surgeonfish.png" id="40_5s3fy"]
 
+[ext_resource type="Script" path="res://sprites/FaseAssets/Scripts/lake_mission_manager.gd" id="99_lkmgr"]
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aafxv"]
 texture = ExtResource("2_ing66")
 texture_region_size = Vector2i(64, 64)
@@ -979,10 +993,9 @@ size = Vector2(64, 614)
 
 [node name="Fase_Lago" type="Node2D" unique_id=1476192944]
 
-[node name="player" parent="." unique_id=275152579 instance=ExtResource("1_qe65w")]
+[node name="player" type="CharacterBody2D" parent="." unique_id=275152579 groups=["ataque", "jogador"] instance=ExtResource("1_qe65w")]
 z_index = 2
 position = Vector2(58, 10)
-nomeFase = null
 
 [node name="Camera2D2" type="Camera2D" parent="player" unique_id=2014663559]
 limit_left = -6
@@ -1203,149 +1216,134 @@ label_settings = SubResource("LabelSettings_7xt7y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuVitoria" type="PanelContainer" parent="HUD" unique_id=2025569241]
-process_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -8.235291
-offset_top = 49.41176
-offset_right = 542.353
-offset_bottom = 138.41177
-grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_a8ku5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MenuVitoria" unique_id=874322797]
-layout_mode = 2
-mouse_filter = 2
-alignment = 1
 
-[node name="LabelVictory" type="Label" parent="HUD/MenuVitoria/VBoxContainer" unique_id=1147751715]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 1
-text = "Voltar Para a Caverna?"
-label_settings = SubResource("LabelSettings_jhdy0")
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MenuVitoria/VBoxContainer" unique_id=1258536272]
-layout_mode = 2
-mouse_filter = 2
-alignment = 1
-
-[node name="BtnReiniciar" type="TextureButton" parent="HUD/MenuVitoria/VBoxContainer/HBoxContainer" unique_id=440084064]
-z_index = 1
-custom_minimum_size = Vector2(100, 60)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_a8ku5")
-stretch_mode = 0
-
-[node name="BtnVoltar" type="TextureButton" parent="HUD/MenuVitoria/VBoxContainer/HBoxContainer" unique_id=2038374489]
-z_index = 1
-custom_minimum_size = Vector2(100, 60)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_eu64u")
-stretch_mode = 0
-
-[node name="LixoColetavel" parent="." unique_id=324687931 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel" type="Area2D" parent="." unique_id=324687931 instance=ExtResource("21_fkbr8")]
 position = Vector2(3412, 448)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel11" parent="." unique_id=1796973502 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel11" type="Area2D" parent="." unique_id=1796973502 instance=ExtResource("21_fkbr8")]
 position = Vector2(3148, 337)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel9" parent="." unique_id=772682645 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel9" type="Area2D" parent="." unique_id=772682645 instance=ExtResource("21_fkbr8")]
 position = Vector2(3464, 184)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel10" parent="." unique_id=327219805 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel10" type="Area2D" parent="." unique_id=327219805 instance=ExtResource("21_fkbr8")]
 position = Vector2(4162, 116)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel16" parent="." unique_id=1740320927 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel16" type="Area2D" parent="." unique_id=1740320927 instance=ExtResource("21_fkbr8")]
 position = Vector2(4410, 536)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel17" parent="." unique_id=295919957 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel17" type="Area2D" parent="." unique_id=295919957 instance=ExtResource("21_fkbr8")]
 position = Vector2(4621, 365)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel20" parent="." unique_id=1466454346 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel20" type="Area2D" parent="." unique_id=1466454346 instance=ExtResource("21_fkbr8")]
 position = Vector2(5020, 156)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel21" parent="." unique_id=2028741692 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel21" type="Area2D" parent="." unique_id=2028741692 instance=ExtResource("21_fkbr8")]
 position = Vector2(5010, 434)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel18" parent="." unique_id=54697940 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel18" type="Area2D" parent="." unique_id=54697940 instance=ExtResource("21_fkbr8")]
 position = Vector2(4280, 264)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel19" parent="." unique_id=109327740 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel19" type="Area2D" parent="." unique_id=109327740 instance=ExtResource("21_fkbr8")]
 position = Vector2(4529, 108)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel12" parent="." unique_id=1429191814 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel12" type="Area2D" parent="." unique_id=1429191814 instance=ExtResource("21_fkbr8")]
 position = Vector2(3664, 452)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel13" parent="." unique_id=719157242 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel13" type="Area2D" parent="." unique_id=719157242 instance=ExtResource("21_fkbr8")]
 position = Vector2(3792, 313)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel14" parent="." unique_id=289455895 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel14" type="Area2D" parent="." unique_id=289455895 instance=ExtResource("21_fkbr8")]
 position = Vector2(3999, 342)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel15" parent="." unique_id=1897790510 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel15" type="Area2D" parent="." unique_id=1897790510 instance=ExtResource("21_fkbr8")]
 position = Vector2(3771, 163)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel4" parent="." unique_id=857053868 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel4" type="Area2D" parent="." unique_id=857053868 instance=ExtResource("21_fkbr8")]
 position = Vector2(2406, 179)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel5" parent="." unique_id=487970828 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel5" type="Area2D" parent="." unique_id=487970828 instance=ExtResource("21_fkbr8")]
 position = Vector2(2124, 146)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel6" parent="." unique_id=1434236179 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel6" type="Area2D" parent="." unique_id=1434236179 instance=ExtResource("21_fkbr8")]
 position = Vector2(2722, 158)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel7" parent="." unique_id=1662307507 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel7" type="Area2D" parent="." unique_id=1662307507 instance=ExtResource("21_fkbr8")]
 position = Vector2(2773, 325)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel2" parent="." unique_id=448464893 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel2" type="Area2D" parent="." unique_id=448464893 instance=ExtResource("21_fkbr8")]
 position = Vector2(2471, 421)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel8" parent="." unique_id=1746873833 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel8" type="Area2D" parent="." unique_id=1746873833 instance=ExtResource("21_fkbr8")]
 position = Vector2(3137, 139)
+script = ExtResource("24_mdaes")
 
-[node name="LixoColetavel3" parent="." unique_id=279854552 instance=ExtResource("21_fkbr8")]
+[node name="LixoColetavel3" type="Area2D" parent="." unique_id=279854552 instance=ExtResource("21_fkbr8")]
 position = Vector2(2111, 368)
+script = ExtResource("24_mdaes")
 
-[node name="ninho" parent="." unique_id=948101973 instance=ExtResource("22_mu4ir")]
+[node name="ninho" type="Area2D" parent="." unique_id=948101973 instance=ExtResource("22_mu4ir")]
 position = Vector2(2932, 484)
+script = ExtResource("26_f6yn5")
 
-[node name="ninho2" parent="." unique_id=80391159 instance=ExtResource("22_mu4ir")]
+[node name="ninho2" type="Area2D" parent="." unique_id=80391159 instance=ExtResource("22_mu4ir")]
 position = Vector2(2503, 287)
+script = ExtResource("26_f6yn5")
 
-[node name="ninho3" parent="." unique_id=1249541969 instance=ExtResource("22_mu4ir")]
+[node name="ninho3" type="Area2D" parent="." unique_id=1249541969 instance=ExtResource("22_mu4ir")]
 position = Vector2(2930, 166)
+script = ExtResource("26_f6yn5")
 
-[node name="ninho4" parent="." unique_id=1852700487 instance=ExtResource("22_mu4ir")]
+[node name="ninho4" type="Area2D" parent="." unique_id=1852700487 instance=ExtResource("22_mu4ir")]
 position = Vector2(3336, 264)
+script = ExtResource("26_f6yn5")
 
-[node name="ninho5" parent="." unique_id=828172204 instance=ExtResource("22_mu4ir")]
+[node name="ninho5" type="Area2D" parent="." unique_id=828172204 instance=ExtResource("22_mu4ir")]
 position = Vector2(3677, 210)
+script = ExtResource("26_f6yn5")
 
-[node name="ninho6" parent="." unique_id=2052905767 instance=ExtResource("22_mu4ir")]
+[node name="ninho6" type="Area2D" parent="." unique_id=2052905767 instance=ExtResource("22_mu4ir")]
 position = Vector2(4083, 438)
+script = ExtResource("26_f6yn5")
 
-[node name="ninho7" parent="." unique_id=1540906811 instance=ExtResource("22_mu4ir")]
+[node name="ninho7" type="Area2D" parent="." unique_id=1540906811 instance=ExtResource("22_mu4ir")]
 position = Vector2(4440, 319)
+script = ExtResource("26_f6yn5")
 
-[node name="ninho8" parent="." unique_id=1117999011 instance=ExtResource("22_mu4ir")]
+[node name="ninho8" type="Area2D" parent="." unique_id=1117999011 instance=ExtResource("22_mu4ir")]
 position = Vector2(4756, 172)
+script = ExtResource("26_f6yn5")
 
-[node name="ninho9" parent="." unique_id=747025013 instance=ExtResource("22_mu4ir")]
+[node name="ninho9" type="Area2D" parent="." unique_id=747025013 instance=ExtResource("22_mu4ir")]
 position = Vector2(4862, 372)
+script = ExtResource("26_f6yn5")
 
-[node name="NPC" parent="." unique_id=2074458415 instance=ExtResource("23_uigh6")]
+[node name="NPC" type="Area2D" parent="." unique_id=2074458415 instance=ExtResource("23_uigh6")]
 position = Vector2(2291, -40)
+script = ExtResource("28_pgw3m")
 
 [node name="GameManager" type="Node" parent="." unique_id=1758790165]
-script = ExtResource("24_sv3mu")
+script = ExtResource("99_lkmgr")
 barreira_path = NodePath("../Barreira")
 
 [node name="Timer" type="Timer" parent="GameManager" unique_id=798049513]
@@ -1357,137 +1355,269 @@ position = Vector2(1920, 385)
 position = Vector2(895, -568)
 shape = SubResource("RectangleShape2D_qcyrp")
 
-[node name="Fish" parent="." unique_id=1531615811 instance=ExtResource("26_5lbkr")]
+[node name="Fish" type="CharacterBody2D" parent="." unique_id=1531615811 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2701, 529)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish2" parent="." unique_id=1849905362 instance=ExtResource("26_5lbkr")]
+[node name="Fish2" type="CharacterBody2D" parent="." unique_id=1849905362 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2054, 543)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish3" parent="." unique_id=1810929698 instance=ExtResource("26_5lbkr")]
+[node name="Fish3" type="CharacterBody2D" parent="." unique_id=1810929698 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2204, 263)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish4" parent="." unique_id=1539658065 instance=ExtResource("26_5lbkr")]
+[node name="Fish4" type="CharacterBody2D" parent="." unique_id=1539658065 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2177, 156)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish5" parent="." unique_id=657245501 instance=ExtResource("26_5lbkr")]
+[node name="Fish5" type="CharacterBody2D" parent="." unique_id=657245501 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2389, 659)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish6" parent="." unique_id=742711566 instance=ExtResource("26_5lbkr")]
+[node name="Fish6" type="CharacterBody2D" parent="." unique_id=742711566 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2626, 167)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish7" parent="." unique_id=213881943 instance=ExtResource("26_5lbkr")]
+[node name="Fish7" type="CharacterBody2D" parent="." unique_id=213881943 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3062, 568)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish8" parent="." unique_id=2109174026 instance=ExtResource("26_5lbkr")]
+[node name="Fish8" type="CharacterBody2D" parent="." unique_id=2109174026 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2857, 429)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish14" parent="." unique_id=1615190418 instance=ExtResource("26_5lbkr")]
+[node name="Fish14" type="CharacterBody2D" parent="." unique_id=1615190418 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2831, 194)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish15" parent="." unique_id=713969452 instance=ExtResource("26_5lbkr")]
+[node name="Fish15" type="CharacterBody2D" parent="." unique_id=713969452 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2812, 557)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish16" parent="." unique_id=8547123 instance=ExtResource("26_5lbkr")]
+[node name="Fish16" type="CharacterBody2D" parent="." unique_id=8547123 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2983, 657)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish18" parent="." unique_id=1935743316 instance=ExtResource("26_5lbkr")]
+[node name="Fish18" type="CharacterBody2D" parent="." unique_id=1935743316 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3177, 498)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish19" parent="." unique_id=1845631132 instance=ExtResource("26_5lbkr")]
+[node name="Fish19" type="CharacterBody2D" parent="." unique_id=1845631132 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3036, 438)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish20" parent="." unique_id=733972442 instance=ExtResource("26_5lbkr")]
+[node name="Fish20" type="CharacterBody2D" parent="." unique_id=733972442 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2925, 334)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish21" parent="." unique_id=593360910 instance=ExtResource("26_5lbkr")]
+[node name="Fish21" type="CharacterBody2D" parent="." unique_id=593360910 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3006, 251)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish22" parent="." unique_id=1102682454 instance=ExtResource("26_5lbkr")]
+[node name="Fish22" type="CharacterBody2D" parent="." unique_id=1102682454 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3209, 221)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish23" parent="." unique_id=1997868691 instance=ExtResource("26_5lbkr")]
+[node name="Fish23" type="CharacterBody2D" parent="." unique_id=1997868691 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3290, 491)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish24" parent="." unique_id=87378783 instance=ExtResource("26_5lbkr")]
+[node name="Fish24" type="CharacterBody2D" parent="." unique_id=87378783 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3570, 590)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish25" parent="." unique_id=1565494944 instance=ExtResource("26_5lbkr")]
+[node name="Fish25" type="CharacterBody2D" parent="." unique_id=1565494944 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3578, 260)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish26" parent="." unique_id=1120128054 instance=ExtResource("26_5lbkr")]
+[node name="Fish26" type="CharacterBody2D" parent="." unique_id=1120128054 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3808, 293)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish27" parent="." unique_id=2142715630 instance=ExtResource("26_5lbkr")]
+[node name="Fish27" type="CharacterBody2D" parent="." unique_id=2142715630 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3857, 458)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish28" parent="." unique_id=1642620753 instance=ExtResource("26_5lbkr")]
+[node name="Fish28" type="CharacterBody2D" parent="." unique_id=1642620753 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3947, 269)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish29" parent="." unique_id=251780990 instance=ExtResource("26_5lbkr")]
+[node name="Fish29" type="CharacterBody2D" parent="." unique_id=251780990 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3947, 591)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish30" parent="." unique_id=908018797 instance=ExtResource("26_5lbkr")]
+[node name="Fish30" type="CharacterBody2D" parent="." unique_id=908018797 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4178, 385)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish31" parent="." unique_id=2042238738 instance=ExtResource("26_5lbkr")]
+[node name="Fish31" type="CharacterBody2D" parent="." unique_id=2042238738 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4178, 515)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish32" parent="." unique_id=1890249167 instance=ExtResource("26_5lbkr")]
+[node name="Fish32" type="CharacterBody2D" parent="." unique_id=1890249167 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3989, 210)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish33" parent="." unique_id=2083415733 instance=ExtResource("26_5lbkr")]
+[node name="Fish33" type="CharacterBody2D" parent="." unique_id=2083415733 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4237, 193)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish34" parent="." unique_id=560205231 instance=ExtResource("26_5lbkr")]
+[node name="Fish34" type="CharacterBody2D" parent="." unique_id=560205231 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4319, 218)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish35" parent="." unique_id=548452879 instance=ExtResource("26_5lbkr")]
+[node name="Fish35" type="CharacterBody2D" parent="." unique_id=548452879 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4336, 391)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish36" parent="." unique_id=803281840 instance=ExtResource("26_5lbkr")]
+[node name="Fish36" type="CharacterBody2D" parent="." unique_id=803281840 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4287, 564)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish37" parent="." unique_id=223867221 instance=ExtResource("26_5lbkr")]
+[node name="Fish37" type="CharacterBody2D" parent="." unique_id=223867221 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4649, 547)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish38" parent="." unique_id=586230803 instance=ExtResource("26_5lbkr")]
+[node name="Fish38" type="CharacterBody2D" parent="." unique_id=586230803 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4748, 349)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish39" parent="." unique_id=1542859532 instance=ExtResource("26_5lbkr")]
+[node name="Fish39" type="CharacterBody2D" parent="." unique_id=1542859532 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4608, 292)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish40" parent="." unique_id=1605342561 instance=ExtResource("26_5lbkr")]
+[node name="Fish40" type="CharacterBody2D" parent="." unique_id=1605342561 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4830, 259)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish41" parent="." unique_id=1073792037 instance=ExtResource("26_5lbkr")]
+[node name="Fish41" type="CharacterBody2D" parent="." unique_id=1073792037 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4995, 306)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish42" parent="." unique_id=1494643491 instance=ExtResource("26_5lbkr")]
+[node name="Fish42" type="CharacterBody2D" parent="." unique_id=1494643491 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(5152, 431)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish43" parent="." unique_id=1556863506 instance=ExtResource("26_5lbkr")]
+[node name="Fish43" type="CharacterBody2D" parent="." unique_id=1556863506 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4765, 612)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish44" parent="." unique_id=1895023551 instance=ExtResource("26_5lbkr")]
+[node name="Fish44" type="CharacterBody2D" parent="." unique_id=1895023551 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(4714, 516)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish17" parent="." unique_id=420613990 instance=ExtResource("26_5lbkr")]
+[node name="Fish17" type="CharacterBody2D" parent="." unique_id=420613990 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2594, 603)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish9" parent="." unique_id=778737652 instance=ExtResource("26_5lbkr")]
+[node name="Fish9" type="CharacterBody2D" parent="." unique_id=778737652 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2216, 377)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish10" parent="." unique_id=1660209760 instance=ExtResource("26_5lbkr")]
+[node name="Fish10" type="CharacterBody2D" parent="." unique_id=1660209760 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2292, 535)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish11" parent="." unique_id=1812235250 instance=ExtResource("26_5lbkr")]
+[node name="Fish11" type="CharacterBody2D" parent="." unique_id=1812235250 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2786, 645)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish12" parent="." unique_id=742227028 instance=ExtResource("26_5lbkr")]
+[node name="Fish12" type="CharacterBody2D" parent="." unique_id=742227028 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(3041, 335)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
-[node name="Fish13" parent="." unique_id=1043013873 instance=ExtResource("26_5lbkr")]
+[node name="Fish13" type="CharacterBody2D" parent="." unique_id=1043013873 instance=ExtResource("26_5lbkr")]
+z_index = 5
 position = Vector2(2620, 373)
+script = ExtResource("30_1lbjb")
+texturas_peixe = Array[Texture2D]([ExtResource("31_yd4wo"), ExtResource("32_x1ooe"), ExtResource("33_pb3w4"), ExtResource("34_516b4"), ExtResource("35_w5fol"), ExtResource("36_mp6os"), ExtResource("37_fdesf"), ExtResource("38_th6rf"), ExtResource("39_p73c2"), ExtResource("40_5s3fy")])
 
 [connection signal="body_entered" from="AreaAgua" to="player" method="_on_area_agua_body_entered"]
 [connection signal="body_exited" from="AreaAgua" to="player" method="_on_area_agua_body_exited"]

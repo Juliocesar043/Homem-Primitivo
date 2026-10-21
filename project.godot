@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Homem Primitivo - Projeto de Extensão"
-run/main_scene="uid://du1cg3b1v5yu"
+run/main_scene="uid://b33hg3vj7uxyy"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,4 @@
+res://scene/floresta.tscn
+res://scripts/village_world.gd
+res://scripts/AudioManager.gd
+res://scripts/GameManager.gd

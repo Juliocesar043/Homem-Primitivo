@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1"
+         xmlns:uml="http://www.omg.org/spec/UML/20090901"
+         xmi:version="2.1">
+
+  <uml:Model xmi:type="uml:Model" xmi:id="model_root" name="Homem Primitivo">
+
+    <!-- ================================================================== -->
+    <!-- ATOR                                                                -->
+    <!-- ================================================================== -->
+    <packagedElement xmi:type="uml:Actor" xmi:id="actor_jogador" name="Jogador"/>
+
+    <!-- ================================================================== -->
+    <!-- CASOS DE USO                                                        -->
+    <!-- ================================================================== -->
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc01" name="UC01: Iniciar Jogo"/>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc02" name="UC02: Visualizar Instruções"/>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc03" name="UC03: Movimentar Personagem">
+      <!-- UC10 estende UC03 [cair do mapa / Game Over] -->
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="ep_uc03_queda" name="cair do mapa ou Game Over"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc04" name="UC04: Navegar entre Fases">
+      <!-- UC04 inclui UC03 -->
+      <include xmi:type="uml:Include" xmi:id="inc_uc04_uc03" addition="uc03"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc05" name="UC05: Atacar">
+      <!-- UC09 estende UC05 [último fogo apagado] -->
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="ep_uc05_fogo" name="último fogo apagado"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc06" name="UC06: Interagir com Elemento"/>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc07" name="UC07: Realizar Minigame">
+      <!-- UC07 inclui UC06 -->
+      <include xmi:type="uml:Include" xmi:id="inc_uc07_uc06" addition="uc06"/>
+      <!-- UC09 estende UC07 [último par acertado] -->
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="ep_uc07_par" name="último par acertado"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc08" name="UC08: Interagir com Pintura Rupestre">
+      <!-- UC08 inclui UC06 -->
+      <include xmi:type="uml:Include" xmi:id="inc_uc08_uc06" addition="uc06"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc09" name="UC09: Concluir Fase">
+      <!-- UC09 estende UC05 -->
+      <extend xmi:type="uml:Extend" xmi:id="ext_uc09_uc05" extendedCase="uc05" extensionLocation="ep_uc05_fogo">
+        <condition xmi:type="uml:Constraint" xmi:id="cond_uc09_uc05">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_uc09_uc05">
+            <body>último fogo apagado</body>
+          </specification>
+        </condition>
+      </extend>
+      <!-- UC09 estende UC07 -->
+      <extend xmi:type="uml:Extend" xmi:id="ext_uc09_uc07" extendedCase="uc07" extensionLocation="ep_uc07_par">
+        <condition xmi:type="uml:Constraint" xmi:id="cond_uc09_uc07">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_uc09_uc07">
+            <body>último par acertado</body>
+          </specification>
+        </condition>
+      </extend>
+      <!-- UC10 estende UC09 [jogador clica Rejogar] -->
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="ep_uc09_rejogar" name="jogador clica Rejogar"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:UseCase" xmi:id="uc10" name="UC10: Reiniciar Fase">
+      <!-- UC10 estende UC09 -->
+      <extend xmi:type="uml:Extend" xmi:id="ext_uc10_uc09" extendedCase="uc09" extensionLocation="ep_uc09_rejogar">
+        <condition xmi:type="uml:Constraint" xmi:id="cond_uc10_uc09">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_uc10_uc09">
+            <body>jogador clica Rejogar</body>
+          </specification>
+        </condition>
+      </extend>
+      <!-- UC10 estende UC03 -->
+      <extend xmi:type="uml:Extend" xmi:id="ext_uc10_uc03" extendedCase="uc03" extensionLocation="ep_uc03_queda">
+        <condition xmi:type="uml:Constraint" xmi:id="cond_uc10_uc03">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_uc10_uc03">
+            <body>cair do mapa ou Game Over</body>
+          </specification>
+        </condition>
+      </extend>
+    </packagedElement>
+
+    <!-- ================================================================== -->
+    <!-- ASSOCIAÇÕES: Jogador → Casos de Uso                                -->
+    <!-- ================================================================== -->
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_jogador_uc01" name="">
+      <memberEnd xmi:idref="end_jogador_uc01_src"/>
+      <memberEnd xmi:idref="end_jogador_uc01_tgt"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc01_src" type="actor_jogador" association="assoc_jogador_uc01"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc01_tgt" type="uc01" association="assoc_jogador_uc01"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_jogador_uc02" name="">
+      <memberEnd xmi:idref="end_jogador_uc02_src"/>
+      <memberEnd xmi:idref="end_jogador_uc02_tgt"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc02_src" type="actor_jogador" association="assoc_jogador_uc02"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc02_tgt" type="uc02" association="assoc_jogador_uc02"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_jogador_uc03" name="">
+      <memberEnd xmi:idref="end_jogador_uc03_src"/>
+      <memberEnd xmi:idref="end_jogador_uc03_tgt"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc03_src" type="actor_jogador" association="assoc_jogador_uc03"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc03_tgt" type="uc03" association="assoc_jogador_uc03"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_jogador_uc04" name="">
+      <memberEnd xmi:idref="end_jogador_uc04_src"/>
+      <memberEnd xmi:idref="end_jogador_uc04_tgt"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc04_src" type="actor_jogador" association="assoc_jogador_uc04"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc04_tgt" type="uc04" association="assoc_jogador_uc04"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_jogador_uc05" name="">
+      <memberEnd xmi:idref="end_jogador_uc05_src"/>
+      <memberEnd xmi:idref="end_jogador_uc05_tgt"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc05_src" type="actor_jogador" association="assoc_jogador_uc05"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc05_tgt" type="uc05" association="assoc_jogador_uc05"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_jogador_uc06" name="">
+      <memberEnd xmi:idref="end_jogador_uc06_src"/>
+      <memberEnd xmi:idref="end_jogador_uc06_tgt"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc06_src" type="actor_jogador" association="assoc_jogador_uc06"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc06_tgt" type="uc06" association="assoc_jogador_uc06"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_jogador_uc07" name="">
+      <memberEnd xmi:idref="end_jogador_uc07_src"/>
+      <memberEnd xmi:idref="end_jogador_uc07_tgt"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc07_src" type="actor_jogador" association="assoc_jogador_uc07"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc07_tgt" type="uc07" association="assoc_jogador_uc07"/>
+    </packagedElement>
+
+    <packagedElement xmi:type="uml:Association" xmi:id="assoc_jogador_uc08" name="">
+      <memberEnd xmi:idref="end_jogador_uc08_src"/>
+      <memberEnd xmi:idref="end_jogador_uc08_tgt"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc08_src" type="actor_jogador" association="assoc_jogador_uc08"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="end_jogador_uc08_tgt" type="uc08" association="assoc_jogador_uc08"/>
+    </packagedElement>
+
+  </uml:Model>
+
+</xmi:XMI>

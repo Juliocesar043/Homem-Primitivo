@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://7u0s74d0qod2"]
+
+[ext_resource type="Script" uid="uid://l3qjxko7bodb" path="res://entidades/arbusto_fogo.gd" id="1_3ovfi"]
+[ext_resource type="Texture2D" uid="uid://bk5ct187q6s03" path="res://sprites/AssetsFaseFloresta/roedorChorandoAnimacao.png" id="2_xmm5u"]
+[ext_resource type="Texture2D" uid="uid://o3kttc27ky68" path="res://sprites/Roedor.png" id="3_yhrql"]
+[ext_resource type="Script" uid="uid://c7gfve6p1jb03" path="res://scripts/zona_dano.gd" id="4_xmm5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28u7x"]
+atlas = ExtResource("2_xmm5u")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqpqk"]
+atlas = ExtResource("2_xmm5u")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1a7a"]
+atlas = ExtResource("2_xmm5u")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr54d"]
+atlas = ExtResource("2_xmm5u")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bis8l"]
+atlas = ExtResource("2_xmm5u")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly7uj"]
+atlas = ExtResource("2_xmm5u")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hdgg5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28u7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqpqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1a7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr54d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bis8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly7uj")
+}],
+"loop": 1,
+"name": &"fogo",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdgg5"]
+size = Vector2(170, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhrql"]
+size = Vector2(39.79039, 48.956375)
+
+[node name="ArbustoFogo" type="StaticBody2D" unique_id=758710231 node_paths=PackedStringArray("arbustoQueimando", "arbustoNormal", "colisaoDano")]
+script = ExtResource("1_3ovfi")
+arbustoQueimando = NodePath("AnimatedSprite2D")
+arbustoNormal = NodePath("Sprite2D")
+colisaoDano = NodePath("ZonaDano/CollisionShape2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=207169743]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_hdgg5")
+animation = &"fogo"
+autoplay = "fogo"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328248958]
+visible = false
+position = Vector2(-24, 21)
+texture = ExtResource("3_yhrql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122497819]
+position = Vector2(-6, 13)
+shape = SubResource("RectangleShape2D_hdgg5")
+disabled = true
+
+[node name="ZonaDano" type="Area2D" parent="." unique_id=1312609608]
+script = ExtResource("4_xmm5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDano" unique_id=1234840931]
+position = Vector2(-30.999998, 26.5)
+scale = Vector2(3.0158036, 2.7984097)
+shape = SubResource("RectangleShape2D_yhrql")
+
+[connection signal="area_entered" from="ZonaDano" to="." method="_on_zona_dano_area_entered"]
+[connection signal="body_entered" from="ZonaDano" to="." method="_on_zona_dano_body_entered"]
